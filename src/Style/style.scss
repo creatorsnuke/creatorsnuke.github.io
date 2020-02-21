@@ -1,0 +1,146 @@
+$mainColor: #e1e1e1;
+$secondColor: #333;
+
+%boxshadow {
+  box-shadow: 
+    9px 9px 18px #999999,
+    -9px -9px 18px #ffffff;
+  transition: box-shadow 650ms ease-in-out;
+}
+
+%hoverboxshadow {
+  box-shadow: 
+    inset 9px 9px 18px #999999,
+    inset -9px -9px 18px #ffffff;
+}
+
+html,
+body {
+  background-color: $mainColor;
+  font-family: 'Lato', sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: 70.5px;
+  height: 70.5px;
+  font-size: 1.7rem;
+  margin: 3px;
+  cursor: pointer;
+  border: none;
+  border-radius: 35px;
+  background-color: $mainColor;
+  color: $secondColor;
+  @extend %boxshadow;
+  &:hover {
+    @extend %hoverboxshadow;
+  }
+}
+
+.author {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  padding: .5rem 1rem;
+  border-bottom-left-radius: 5px;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  font-family: 'Overlock', Arial, Helvetica, sans-serif;
+  font-size: 70%;
+}
+
+.author a,
+.author a:visited {
+  color: $secondColor;
+  text-decoration: none;
+  display: block;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.author:hover,
+.author:active {
+  @extend %hoverboxshadow;
+}
+
+.terminalStyle {
+  width: 50em;
+  height: 27em;
+  border-radius: 1%;
+  @extend %boxshadow;
+}
+
+.titleBar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eae8e9;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid rgba(66, 66, 66, 0.5);
+}
+
+.titleBtn {
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  margin: 0.2em;
+
+  &.red {
+    background: #fa615c;
+  }
+
+  &.yellow {
+    background: #ffbd48;
+  }
+
+  &.green {
+    background: #3fc950;
+  }
+}
+
+.titleButton {
+  display: flex;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  padding-left: 0.6em;
+}
+
+.titleTitle {
+  align-self: center;
+  font-family: monospace;
+  height: 100%;
+}
+
+.titleRemark {
+  display: flex;
+  padding-right: 0.6em;
+  height: 100%;
+}
+
+.terminalWindow {
+  background-color: rgb(23, 42, 69);
+  border-radius: 0 0 5px 5px;
+  height: 100%;
+  padding: 1.2em 1.5em 0 1.5em;
+  line-height: 1.4em;
+  flex-direction: column;
+  overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 5px;
+  };
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+  };
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 1);; 
+  };
+}
