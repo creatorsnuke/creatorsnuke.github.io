@@ -6,7 +6,7 @@ export const state = [
     command: 'hello',
     output: (
       <span>CreatorsNuke made with Love by Jessie Tarrosa
-         <br/> Type something to see the magic or help
+        <br/> Type something to see the magic or help
       </span>
     )
   }

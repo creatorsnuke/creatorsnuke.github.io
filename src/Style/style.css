@@ -1,6 +1,6 @@
 .btn, .terminalStyle {
-  -webkit-box-shadow: 9px 9px 18px #999999, -9px -9px 18px #ffffff;
-          box-shadow: 9px 9px 18px #999999, -9px -9px 18px #ffffff;
+  -webkit-box-shadow: 9px 9px 18px #999999, -9px -9px 18px #ffffff;
+          box-shadow: 9px 9px 18px #999999, -9px -9px 18px #ffffff;
   -webkit-transition: -webkit-box-shadow 650ms ease-in-out;
   transition: -webkit-box-shadow 650ms ease-in-out;
   transition: box-shadow 650ms ease-in-out;
@@ -9,8 +9,8 @@
 
 .btn:hover, .author:hover,
 .author:active {
-  -webkit-box-shadow: inset 9px 9px 18px #999999, inset -9px -9px 18px #ffffff;
-          box-shadow: inset 9px 9px 18px #999999, inset -9px -9px 18px #ffffff;
+  -webkit-box-shadow: inset 9px 9px 18px #999999, inset -9px -9px 18px #ffffff;
+          box-shadow: inset 9px 9px 18px #999999, inset -9px -9px 18px #ffffff;
 }
 
 html,
@@ -311,7 +311,7 @@ template {
   background-color: #172a45;
   border-radius: 0 0 5px 5px;
   height: 100%;
-  padding: 1.2em 1.5em 0 1.5em;
+  padding: 1.2em 1.5em 1.2em 1.5em;
   line-height: 1.4em;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -320,16 +320,16 @@ template {
   overflow-y: auto;
 }
 
-.terminalWindow ::-webkit-scrollbar {
-  width: 5px;
+.terminalWindow::-webkit-scrollbar {
+  width: 2px;
 }
 
-.terminalWindow ::-webkit-scrollbar-thumb {
+.terminalWindow::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
+  border-radius: 2px;
 }
 
-.terminalWindow ::-webkit-scrollbar-thumb:hover {
+.terminalWindow::-webkit-scrollbar-thumb:hover {
   background: white;
 }
 /*# sourceMappingURL=style.css.map */

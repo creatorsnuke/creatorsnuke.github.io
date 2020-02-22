@@ -302,18 +302,19 @@ template {
   background-color: rgb(23, 42, 69);
   border-radius: 0 0 5px 5px;
   height: 100%;
-  padding: 1.2em 1.5em 0 1.5em;
+  padding: 1.2em 1.5em 1.2em 1.5em;
   line-height: 1.4em;
   flex-direction: column;
   overflow-y: auto;
-  ::-webkit-scrollbar {
-    width: 5px;
-  };
-  ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-  };
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 1);; 
-  };
 }
+
+.terminalWindow::-webkit-scrollbar {
+  width: 2px;
+};
+.terminalWindow::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+};
+.terminalWindow::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 1);; 
+};
