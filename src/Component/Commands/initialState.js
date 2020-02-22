@@ -41,5 +41,10 @@ export const initialState = {
       <span>
         Bazinga!!!
       </span>
+    ),
+    experience: (
+      <span>
+        Hire me please...
+      </span>
     )
   }
