@@ -13,7 +13,11 @@ export function TitleBar ({ title }) {
       <div className='titleTitle'>
         <span>{title}</span>
       </div>
-      <div className="titleRemark"></div>
+      <div className="titleRemark">
+        <TitleButton />
+        <TitleButton />
+        <TitleButton />
+      </div>
     </div>
   )
 }
