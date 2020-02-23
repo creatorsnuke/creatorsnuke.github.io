@@ -11,29 +11,40 @@ export const TerminalContext = createContext({
 export function TerminalContextProvider (props) {
   const [terminalCommands, setTerminalCommands] = useState(state)
   const [commands, setCommands] = useState(initialState)
+  const [terminal, setTerminal] = useState(null)
 
   const executeCommand = (input) => {
     input = input.toLowerCase()
     
     const newCommand = {
-      initial: true,
+      initial: false,
       command: input,
       output: commands[input]
     }
-    
-    if (commands.hasOwnProperty(input)) {
-      return setTerminalCommands([
-        ...terminalCommands, newCommand
-      ])
+
+    const errorCommand = {
+      initial: false,
+      command: input,
+      output: `Invalid command: ${input}`
     }
 
     if (input === 'cls' || input === 'clear') {
       return setTerminalCommands([])
     }
+    
+    if (!commands.hasOwnProperty(input)) {
+      return setTerminalCommands([
+        ...terminalCommands, errorCommand
+      ])
+    } else {
+      return setTerminalCommands([
+        ...terminalCommands, newCommand
+      ])
+    }
   }
 
   return(
-    <TerminalContext.Provider value={{ terminalCommands, setTerminalCommands, executeCommand }}>
+    <TerminalContext.Provider value={{ terminalCommands, setTerminalCommands, executeCommand, terminal, setTerminal }}>
       {props.children}
     </TerminalContext.Provider>
   )

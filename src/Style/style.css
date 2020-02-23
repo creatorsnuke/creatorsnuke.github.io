@@ -1,4 +1,4 @@
-.btn, .terminalStyle {
+.circleButton {
   -webkit-box-shadow: 9px 9px 18px #999999, -9px -9px 18px #ffffff;
           box-shadow: 9px 9px 18px #999999, -9px -9px 18px #ffffff;
   -webkit-transition: -webkit-box-shadow 650ms ease-in-out;
@@ -7,10 +7,17 @@
   transition: box-shadow 650ms ease-in-out, -webkit-box-shadow 650ms ease-in-out;
 }
 
-.btn:hover, .author:hover,
+.author:hover,
 .author:active {
   -webkit-box-shadow: inset 9px 9px 18px #999999, inset -9px -9px 18px #ffffff;
           box-shadow: inset 9px 9px 18px #999999, inset -9px -9px 18px #ffffff;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
@@ -18,7 +25,6 @@ body {
   background-color: #e1e1e1;
   font-family: 'Lato', sans-serif;
   overflow: hidden;
-  line-height: 1.15;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -197,7 +203,7 @@ template {
   display: none;
 }
 
-.container {
+.content {
   height: 100vh;
   width: 100vw;
   display: -webkit-box;
@@ -211,16 +217,17 @@ template {
           align-items: center;
 }
 
-.btn {
-  width: 70.5px;
-  height: 70.5px;
-  font-size: 1.7rem;
-  margin: 3px;
-  cursor: pointer;
-  border: none;
-  border-radius: 35px;
-  background-color: #e1e1e1;
-  color: #333;
+.container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: inherit;
+      -ms-flex-pack: inherit;
+          justify-content: inherit;
+  -webkit-box-align: inherit;
+      -ms-flex-align: inherit;
+          align-items: inherit;
 }
 
 .author {
@@ -245,12 +252,6 @@ template {
   transition: 300ms;
 }
 
-.terminalStyle {
-  width: 50em;
-  height: 27em;
-  border-radius: 1%;
-}
-
 .titleBar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -272,6 +273,7 @@ template {
 
 .titleBtn.red {
   background: #fa615c;
+  cursor: pointer;
 }
 
 .titleBtn.yellow {
@@ -331,5 +333,40 @@ template {
 
 .terminalWindow::-webkit-scrollbar-thumb:hover {
   background: white;
+}
+
+.terminalStyle {
+  width: 55em;
+  height: 30em;
+}
+
+.circleButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15em;
+  width: 15em;
+  background: #e1e1e1;
+  color: #333;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.circleButton::after {
+  content: '';
+  height: 95%;
+  width: 95%;
+  background: url("https://avatars2.githubusercontent.com/u/32976964?s=460&v=4");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  -webkit-box-shadow: inset -3px -3px 7px #999999, inset 3px 3px 5px #ffffff;
+          box-shadow: inset -3px -3px 7px #999999, inset 3px 3px 5px #ffffff;
 }
 /*# sourceMappingURL=style.css.map */

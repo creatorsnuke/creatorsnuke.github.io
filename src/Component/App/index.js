@@ -1,18 +1,16 @@
 import React from 'react'
 import { Author } from '@Component/Author'
-import { TitleBar } from '@Component/TitleBar'
-import { TerminalWindow } from '@Component/TerminalWindow'
+import { OpenTerminal } from '@Component/OpenTerminal'
 import { TerminalContextProvider } from '@Component/TerminalContext'
+import { TerminalManager } from '@Component/TerminalManager'
 
 export function App () {
   return (
     <TerminalContextProvider>
-      <div className='container'>
-        <div className='terminalStyle'>
-          <TitleBar title='jessie@creatorsnuke: ~' />
-          <TerminalWindow />
-        </div>
+      <div className='content'>
         <Author />
+        <TerminalManager />
+        <OpenTerminal />
       </div>
     </TerminalContextProvider>
   )

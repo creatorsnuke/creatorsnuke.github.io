@@ -39,7 +39,7 @@ export function TerminalWindowOutput (props) {
       { props.initial === false &&
         <div style={WindowStyleInput}>
           <span style={StyleInput}>➜</span>
-          <span style={TextAreaStyle}>{props.commands}</span>
+          <span style={TextAreaStyle}>{props.command}</span>
         </div>
       }
       <div style={WindowStyleInput}>

@@ -14,12 +14,17 @@ $secondColor: #333;
     inset -9px -9px 18px #ffffff;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html,
 body {
   background-color: $mainColor;
   font-family: 'Lato', sans-serif;
   overflow: hidden;
-  line-height: 1.15;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -194,7 +199,7 @@ template {
   display: none;
 }
 
-.container {
+.content {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -202,20 +207,11 @@ template {
   align-items: center;
 }
 
-.btn {
-  width: 70.5px;
-  height: 70.5px;
-  font-size: 1.7rem;
-  margin: 3px;
-  cursor: pointer;
-  border: none;
-  border-radius: 35px;
-  background-color: $mainColor;
-  color: $secondColor;
-  @extend %boxshadow;
-  &:hover {
-    @extend %hoverboxshadow;
-  }
+.container {
+  position: absolute;
+  display: flex;
+  justify-content: inherit;
+  align-items: inherit;
 }
 
 .author {
@@ -245,13 +241,6 @@ template {
   @extend %hoverboxshadow;
 }
 
-.terminalStyle {
-  width: 50em;
-  height: 27em;
-  border-radius: 1%;
-  @extend %boxshadow;
-}
-
 .titleBar {
   display: flex;
   justify-content: space-between;
@@ -268,6 +257,7 @@ template {
 
   &.red {
     background: #fa615c;
+    cursor: pointer;
   }
 
   &.yellow {
@@ -310,11 +300,40 @@ template {
 
 .terminalWindow::-webkit-scrollbar {
   width: 2px;
-};
+}
 .terminalWindow::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 2px;
-};
+}
 .terminalWindow::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 1);; 
-};
+}
+
+.terminalStyle {
+  width: 55em;
+  height: 30em;
+}
+
+.circleButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15em;
+  width: 15em;
+  background: $mainColor;
+  color: $secondColor;
+  border-radius: 50%;
+  cursor: pointer;
+  @extend %boxshadow;
+}
+
+.circleButton::after {
+  content: '';
+  height: 95%;
+  width: 95%;
+  background: url('https://avatars2.githubusercontent.com/u/32976964?s=460&v=4');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: inset -3px -3px 7px #999999, inset 3px 3px 5px #ffffff;
+}

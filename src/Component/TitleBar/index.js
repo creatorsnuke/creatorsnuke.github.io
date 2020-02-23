@@ -1,17 +1,17 @@
 import React from 'react'
 import { TitleButton } from '@Component/TitleButton'
 
-export function TitleBar ({ title }) {
+export function TitleBar (props) {
 
   return (
     <div className='titleBar'>
       <div className='titleButton'>
-        <TitleButton color='red' />
+        <TitleButton closeTerminal={props.closeTerminal} color='red' />
         <TitleButton color='yellow' />
         <TitleButton color='green' />
       </div>
       <div className='titleTitle'>
-        <span>{title}</span>
+        <span>{props.title}</span>
       </div>
       <div className="titleRemark">
         <TitleButton />

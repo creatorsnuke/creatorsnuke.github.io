@@ -1,7 +1,8 @@
 import React from 'react'
 
 const linkStyle = {
-  color: 'inherit'
+  color: 'inherit',
+  textDecoration: 'none'
 }
 
 export const initialState = {
@@ -11,7 +12,7 @@ export const initialState = {
   about: (
     <span>Hello there,
       <br/>
-      I&apos;m Jessie Tarrosa a web developer in Cebu
+      I&apos;m Jessie Tarrosa a web developer living in Cebu
     </span>
   ),
   education: (
@@ -21,14 +22,16 @@ export const initialState = {
     </span>
   ),
   skills: (
-    <span>Framework: React, Vue, Laravel
+    <span>Framework: Nodejs, Express, MongoDB, React, Vue and Laravel
       <br/>
-      Languages: JavaScript, PHP, HTML, CSS, C
+      Languages: JavaScript, PHP, HTML, CSS and C
+      <br/>
+      Tools: Vscode & Adobe (Ai, Ps & Id)
     </span>
   ),
   contact: (
     <span>
-      You can contact me on any of following links:
+      Feel free to reach me at:
       <br/>
       <a href='https://www.facebook.com/tarrosa.jessie' style={linkStyle}>Facebook</a>
       <br/>
@@ -44,7 +47,7 @@ export const initialState = {
   ),
   experience: (
     <span>
-      Hire me please...
+      Hire me to unlock experience...
     </span>
   )
 }
