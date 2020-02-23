@@ -324,7 +324,7 @@ template {
   color: $secondColor;
   border-radius: 50%;
   cursor: pointer;
-  @extend %boxshadow;
+  box-shadow: 3px 3px 7px #999999, -3px -3px 5px #ffffff;
 }
 
 .circleButton::after {
@@ -335,5 +335,4 @@ template {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 50%;
-  box-shadow: inset -3px -3px 7px #999999, inset 3px 3px 5px #ffffff;
 }
