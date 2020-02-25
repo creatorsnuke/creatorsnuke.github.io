@@ -15,9 +15,7 @@ $secondColor: #333;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
-  padding: 0;
 }
 
 html,
@@ -25,7 +23,6 @@ body {
   background-color: $mainColor;
   font-family: 'Lato', sans-serif;
   overflow: hidden;
-  -webkit-text-size-adjust: 100%;
 }
 
 main {
@@ -210,8 +207,8 @@ template {
 .container {
   position: absolute;
   display: flex;
-  justify-content: inherit;
-  align-items: inherit;
+  justify-content: center;
+  align-items: center;
 }
 
 .author {
@@ -310,8 +307,8 @@ template {
 }
 
 .terminalStyle {
-  width: 55em;
-  height: 30em;
+  width: 50em;
+  height: 24em;
 }
 
 .circleButton {
@@ -323,6 +320,7 @@ template {
   background: $mainColor;
   color: $secondColor;
   border-radius: 50%;
+  outline-style: none;
   cursor: pointer;
   box-shadow: 3px 3px 7px #999999, -3px -3px 5px #ffffff;
 }
@@ -335,4 +333,12 @@ template {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 50%;
+  outline-style: none;
+}
+
+@media (max-width: 700px) {
+  .terminalStyle {
+    height: 20em;
+    width: 30em;
+  }
 }

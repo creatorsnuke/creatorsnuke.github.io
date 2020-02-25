@@ -22,11 +22,11 @@ export const initialState = {
     </span>
   ),
   skills: (
-    <span>Framework: Nodejs, Express, MongoDB, React, Vue and Laravel
+    <span>Framework/Library/DB: Express, React, Vue, Laravel, MongoDB and MySQL
       <br/>
       Languages: JavaScript, PHP, HTML, CSS and C
       <br/>
-      Tools: Vscode & Adobe (Ai, Ps & Id)
+      Tools: Nodejs, Git, Vscode, Browsers & Adobe (Ai, Ps & Id)
     </span>
   ),
   contact: (
@@ -38,6 +38,8 @@ export const initialState = {
       <a href='https://www.instagram.com/majessietic' style={linkStyle}>Instagram</a>
       <br/>
       <a href='https://www.twitter.com/majessietic' style={linkStyle}>Twitter</a>
+      <br/>
+      <a href='mailto:creators.nuke@gmail.com' style={linkStyle}>creators.nuke@gmail.com</a>
     </span>
   ),
   something: (

@@ -9,8 +9,8 @@ export function App () {
     <TerminalContextProvider>
       <div className='content'>
         <Author />
-        <TerminalManager />
         <OpenTerminal />
+        <TerminalManager />
       </div>
     </TerminalContextProvider>
   )
