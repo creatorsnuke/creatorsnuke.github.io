@@ -1,7 +1,7 @@
 .author:hover,
 .author:active {
-  -webkit-box-shadow: inset 9px 9px 18px #999999, inset -9px -9px 18px #ffffff;
-          box-shadow: inset 9px 9px 18px #999999, inset -9px -9px 18px #ffffff;
+  -webkit-box-shadow: inset 9px 9px 18px #999999, inset -9px -9px 18px #ffffff;
+          box-shadow: inset 9px 9px 18px #999999, inset -9px -9px 18px #ffffff;
 }
 
 * {
@@ -325,6 +325,32 @@ template {
 .terminalStyle {
   width: 50em;
   height: 24em;
+  -webkit-animation-name: blowUp;
+          animation-name: blowUp;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+}
+
+@-webkit-keyframes blowUp {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes blowUp {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .circleButton {
@@ -346,6 +372,58 @@ template {
   cursor: pointer;
   -webkit-box-shadow: 3px 3px 7px #999999, -3px -3px 5px #ffffff;
           box-shadow: 3px 3px 7px #999999, -3px -3px 5px #ffffff;
+  -webkit-animation-name: bondJamesBond;
+          animation-name: bondJamesBond;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+@-webkit-keyframes bondJamesBond {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+  }
+  80% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    border-radius: 7em;
+    height: 7em;
+    width: 7em;
+  }
+  90% {
+    border-radius: 50%;
+    height: 17em;
+    width: 17em;
+  }
+  100% {
+    border-radius: 50%;
+    height: 15em;
+    width: 15em;
+  }
+}
+
+@keyframes bondJamesBond {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+  }
+  80% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    border-radius: 7em;
+    height: 7em;
+    width: 7em;
+  }
+  90% {
+    border-radius: 50%;
+    height: 17em;
+    width: 17em;
+  }
+  100% {
+    border-radius: 50%;
+    height: 15em;
+    width: 15em;
+  }
 }
 
 .circleButton::after {

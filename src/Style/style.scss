@@ -309,6 +309,17 @@ template {
 .terminalStyle {
   width: 50em;
   height: 24em;
+  animation-name: blowUp;
+  animation-duration: .5s;
+}
+
+@keyframes blowUp {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .circleButton {
@@ -323,6 +334,30 @@ template {
   outline-style: none;
   cursor: pointer;
   box-shadow: 3px 3px 7px #999999, -3px -3px 5px #ffffff;
+  animation-name: bondJamesBond;
+  animation-duration: 2s;
+}
+
+@keyframes bondJamesBond {
+  0% {
+    transform: translateX(1000px);
+  }
+  80% {
+    transform: translateX(0px);
+    border-radius: 7em;
+    height: 7em;
+    width: 7em;
+  }
+  90% {
+    border-radius: 50%;
+    height: 17em;
+    width: 17em;
+  }
+  100% {
+    border-radius: 50%;
+    height: 15em;
+    width: 15em;
+  }
 }
 
 .circleButton::after {
