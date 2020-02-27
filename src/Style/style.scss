@@ -14,24 +14,31 @@ $secondColor: #333;
     inset -9px -9px 18px #ffffff;
 }
 
-* {
-  margin: 0;
-}
-
 html,
 body {
   background-color: $mainColor;
   font-family: 'Lato', sans-serif;
+  margin: 0;
+  height: auto;
   overflow: hidden;
 }
 
-main {
-  display: block;
+h1 {
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 0;
 }
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+h2 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+main {
+  max-width: 100vw;
+  margin: auto;
 }
 
 hr {
@@ -197,18 +204,53 @@ template {
 }
 
 .content {
-  height: 100vh;
-  width: 100vw;
+  background: $mainColor;
+}
+
+.profile {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  flex: 0 1 30vw;
+  height: 50vh;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.profile-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.terminal-window {
+  flex: 0 1 70vw;
+  height: 50vh;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin: 0;
 }
 
 .container {
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
+  animation-name: blowUp;
+  animation-duration: 1s;
+}
+
+@keyframes blowUp {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .author {
@@ -290,9 +332,10 @@ template {
   border-radius: 0 0 5px 5px;
   height: 100%;
   padding: 1.2em 1.5em 1.2em 1.5em;
-  line-height: 1.4em;
+  line-height: 1.2em;
   flex-direction: column;
-  overflow-y: auto;
+  overflow-y: hidden;
+  overflow: auto;
 }
 
 .terminalWindow::-webkit-scrollbar {
@@ -307,27 +350,16 @@ template {
 }
 
 .terminalStyle {
-  width: 50em;
-  height: 24em;
-  animation-name: blowUp;
-  animation-duration: .5s;
-}
-
-@keyframes blowUp {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
+  width: 45em;
+  height: 25em;
 }
 
 .circleButton {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 15em;
-  width: 15em;
+  height: 12em;
+  width: 12em;
   background: $mainColor;
   color: $secondColor;
   border-radius: 50%;
@@ -335,29 +367,8 @@ template {
   cursor: pointer;
   box-shadow: 3px 3px 7px #999999, -3px -3px 5px #ffffff;
   animation-name: bondJamesBond;
-  animation-duration: 2s;
-}
-
-@keyframes bondJamesBond {
-  0% {
-    transform: translateX(1000px);
-  }
-  80% {
-    transform: translateX(0px);
-    border-radius: 7em;
-    height: 7em;
-    width: 7em;
-  }
-  90% {
-    border-radius: 50%;
-    height: 17em;
-    width: 17em;
-  }
-  100% {
-    border-radius: 50%;
-    height: 15em;
-    width: 15em;
-  }
+  animation-duration: 3s;
+  animation-iteration-count: 1;
 }
 
 .circleButton::after {
@@ -371,9 +382,46 @@ template {
   outline-style: none;
 }
 
-@media (max-width: 700px) {
+
+@keyframes bondJamesBond {
+  0% {
+    transform: translateX(1000px);
+  }
+  80% {
+    transform: translateX(0px);
+    border-radius: 7em;
+    height: 7em;
+    width: 7em;
+  }
+  90% {
+    border-radius: 50%;
+    height: 15em;
+    width: 15em;
+  }
+  100% {
+    border-radius: 50%;
+    height: 12em;
+    width: 12em;
+  }
+}
+
+@media (min-width: 850px) {
+  .content {
+    display: flex;
+    height: 100%;
+  }
+
+  .profile {
+    height: 100vh;
+  }
+
+  .terminal-window {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 850px) {
   .terminalStyle {
-    height: 20em;
-    width: 30em;
+    height: 15em;
   }
 }
