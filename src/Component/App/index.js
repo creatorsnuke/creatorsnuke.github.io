@@ -7,11 +7,17 @@ import { TerminalManager } from '@Component/TerminalManager'
 export function App () {
   return (
     <TerminalContextProvider>
-      <div className='content'>
-        <Author />
-        <OpenTerminal />
-        <TerminalManager />
-      </div>
+      <main>
+        <div className='content'>
+          <Author />
+          <div className='profile'>
+            <OpenTerminal />
+          </div>
+          <div className="terminal-window">
+            <TerminalManager />
+          </div>
+        </div>
+      </main>
     </TerminalContextProvider>
   )
 }
