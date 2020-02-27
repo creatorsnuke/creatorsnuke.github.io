@@ -7,6 +7,10 @@ export const OpenTerminal = () => {
   const openTerminal = () => setTerminal('TerminalModal')
 
   return (
-    <div className='circleButton' onClick={openTerminal}></div>
+    <div className='profile-inner'>
+      <div className='circleButton' onClick={openTerminal}></div>
+      <h1>Jessie Tarrosa</h1>
+      <h2>Web Developer</h2>
+    </div>
   )
 }
