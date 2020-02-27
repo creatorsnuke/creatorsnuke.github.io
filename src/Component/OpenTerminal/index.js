@@ -2,9 +2,15 @@ import React, { useContext } from 'react'
 import { TerminalContext } from '@Component/TerminalContext'
 
 export const OpenTerminal = () => {
-  const { setTerminal } = useContext(TerminalContext)
+  const { terminal, setTerminal } = useContext(TerminalContext)
 
-  const openTerminal = () => setTerminal('TerminalModal')
+  const openTerminal = () => {
+    if (!terminal) {
+      setTerminal('TerminalModal')
+    } else {
+      setTerminal(null)
+    }
+  }
 
   return (
     <div className='profile-inner'>

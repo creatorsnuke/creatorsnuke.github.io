@@ -11,7 +11,7 @@ export const TerminalContext = createContext({
 export function TerminalContextProvider (props) {
   const [terminalCommands, setTerminalCommands] = useState(state)
   const [commands, setCommands] = useState(initialState)
-  const [terminal, setTerminal] = useState(null)
+  const [terminal, setTerminal] = useState('TerminalModal')
 
   const executeCommand = (input) => {
     input = input.toLowerCase()
