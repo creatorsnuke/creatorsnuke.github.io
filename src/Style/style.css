@@ -213,8 +213,8 @@ template {
           align-items: center;
   text-align: center;
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 30vw;
-          flex: 0 1 30vw;
+      -ms-flex: 0 1 35vw;
+          flex: 0 1 35vw;
   height: 50vh;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -239,8 +239,8 @@ template {
 
 .terminal-window {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 70vw;
-          flex: 0 1 70vw;
+      -ms-flex: 0 1 65vw;
+          flex: 0 1 65vw;
   height: 50vh;
   padding-right: 1rem;
   padding-left: 1rem;
