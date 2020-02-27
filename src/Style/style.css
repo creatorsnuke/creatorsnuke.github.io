@@ -4,24 +4,31 @@
           box-shadow: inset 9px 9px 18px #999999, inset -9px -9px 18px #ffffff;
 }
 
-* {
-  margin: 0;
-}
-
 html,
 body {
   background-color: #e1e1e1;
   font-family: 'Lato', sans-serif;
+  margin: 0;
+  height: auto;
   overflow: hidden;
 }
 
-main {
-  display: block;
+h1 {
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 0;
 }
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+h2 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+main {
+  max-width: 100vw;
+  margin: auto;
 }
 
 hr {
@@ -191,8 +198,10 @@ template {
 }
 
 .content {
-  height: 100vh;
-  width: 100vw;
+  background: #e1e1e1;
+}
+
+.profile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -202,10 +211,43 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30vw;
+          flex: 0 1 30vw;
+  height: 50vh;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.profile-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.terminal-window {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 70vw;
+          flex: 0 1 70vw;
+  height: 50vh;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin: 0;
 }
 
 .container {
-  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -215,6 +257,34 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100%;
+  width: 100%;
+  -webkit-animation-name: blowUp;
+          animation-name: blowUp;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes blowUp {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes blowUp {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .author {
@@ -301,12 +371,13 @@ template {
   border-radius: 0 0 5px 5px;
   height: 100%;
   padding: 1.2em 1.5em 1.2em 1.5em;
-  line-height: 1.4em;
+  line-height: 1.2em;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow-y: auto;
+  overflow-y: hidden;
+  overflow: auto;
 }
 
 .terminalWindow::-webkit-scrollbar {
@@ -323,34 +394,8 @@ template {
 }
 
 .terminalStyle {
-  width: 50em;
-  height: 24em;
-  -webkit-animation-name: blowUp;
-          animation-name: blowUp;
-  -webkit-animation-duration: .5s;
-          animation-duration: .5s;
-}
-
-@-webkit-keyframes blowUp {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes blowUp {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
+  width: 45em;
+  height: 25em;
 }
 
 .circleButton {
@@ -363,8 +408,8 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 15em;
-  width: 15em;
+  height: 12em;
+  width: 12em;
   background: #e1e1e1;
   color: #333;
   border-radius: 50%;
@@ -374,8 +419,21 @@ template {
           box-shadow: 3px 3px 7px #999999, -3px -3px 5px #ffffff;
   -webkit-animation-name: bondJamesBond;
           animation-name: bondJamesBond;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+.circleButton::after {
+  content: '';
+  height: 95%;
+  width: 95%;
+  background: url("https://avatars2.githubusercontent.com/u/32976964?s=460&v=4");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  outline-style: none;
 }
 
 @-webkit-keyframes bondJamesBond {
@@ -392,13 +450,13 @@ template {
   }
   90% {
     border-radius: 50%;
-    height: 17em;
-    width: 17em;
+    height: 15em;
+    width: 15em;
   }
   100% {
     border-radius: 50%;
-    height: 15em;
-    width: 15em;
+    height: 12em;
+    width: 12em;
   }
 }
 
@@ -416,31 +474,34 @@ template {
   }
   90% {
     border-radius: 50%;
-    height: 17em;
-    width: 17em;
-  }
-  100% {
-    border-radius: 50%;
     height: 15em;
     width: 15em;
   }
+  100% {
+    border-radius: 50%;
+    height: 12em;
+    width: 12em;
+  }
 }
 
-.circleButton::after {
-  content: '';
-  height: 95%;
-  width: 95%;
-  background: url("https://avatars2.githubusercontent.com/u/32976964?s=460&v=4");
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 50%;
-  outline-style: none;
+@media (min-width: 850px) {
+  .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+  }
+  .profile {
+    height: 100vh;
+  }
+  .terminal-window {
+    height: 100vh;
+  }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 850px) {
   .terminalStyle {
-    height: 20em;
-    width: 30em;
+    height: 15em;
   }
 }
 /*# sourceMappingURL=style.css.map */
