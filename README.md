@@ -2,4 +2,4 @@
 
 Portfolio using react
 
-using cmd design/style
+feat: cmd design/style
