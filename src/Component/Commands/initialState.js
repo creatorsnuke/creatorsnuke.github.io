@@ -1,13 +1,26 @@
 import React from 'react'
+import { FaFacebookSquare, FaInstagram, FaTwitterSquare, FaEnvelope } from 'react-icons/fa'
 
 const linkStyle = {
   color: 'inherit',
-  textDecoration: 'none'
+  textDecoration: 'none',
 }
+
+const textStyle = {
+  display: 'inline-flex',
+  verticalAlign: 'middle'
+}
+
 
 export const initialState = {
   help: (
-    <span>List of command: about, contact, skills, experience, education</span>
+    <span>List of command: 
+      <br/>about
+      <br/>contact
+      <br/>experience
+      <br/>education
+      <br/>skills
+    </span>
   ),
   about: (
     <span>Hello there,
@@ -22,24 +35,27 @@ export const initialState = {
     </span>
   ),
   skills: (
-    <span>Framework/Library/DB: Express, React, Vue, Laravel, MongoDB and MySQL
+    <span>Framework/Library/DB: Express, React, Vue, Laravel, Bootstrap, Bulma, Materialize, MongoDB and MySQL
+      <br/>
       <br/>
       Languages: JavaScript, PHP, HTML, CSS and C
       <br/>
-      Tools: Nodejs, Git, Vscode, Browsers & Adobe (Ai, Ps & Id)
+      <br/>
+      Tools: Nodejs, Git, Vscode, Browsers, Adobe (Ai, Ps & Id) & xampp
     </span>
   ),
   contact: (
     <span>
-      Feel free to reach me at:
+      Get in touch with me at:
       <br/>
-      <a href='https://www.facebook.com/tarrosa.jessie' style={linkStyle}>Facebook</a>
       <br/>
-      <a href='https://www.instagram.com/majessietic' style={linkStyle}>Instagram</a>
+      <a href='https://www.facebook.com/tarrosa.jessie' style={linkStyle} ><span style={textStyle}><FaFacebookSquare /></span> - majessietic</a>
       <br/>
-      <a href='https://www.twitter.com/majessietic' style={linkStyle}>Twitter</a>
+      <a href='https://www.instagram.com/majessietic' style={linkStyle}><span style={textStyle}><FaInstagram /></span> - majessietic</a>
       <br/>
-      <a href='mailto:creators.nuke@gmail.com' style={linkStyle}>creators.nuke@gmail.com</a>
+      <a href='https://www.twitter.com/majessietic' style={linkStyle}><span style={textStyle}><FaTwitterSquare /></span> - Twitter</a>
+      <br/>
+      <a href='mailto:creators.nuke@gmail.com' style={linkStyle}><span style={textStyle}><FaEnvelope /></span> - creators.nuke@gmail.com</a>
     </span>
   ),
   something: (
