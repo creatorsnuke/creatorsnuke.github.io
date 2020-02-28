@@ -49,13 +49,21 @@ export const initialState = {
       Get in touch with me at:
       <br/>
       <br/>
-      <a href='https://www.facebook.com/tarrosa.jessie' style={linkStyle} ><span style={textStyle}><FaFacebookSquare /></span> - majessietic</a>
+      <a href='https://www.facebook.com/tarrosa.jessie' style={linkStyle} >
+        <span style={textStyle}><FaFacebookSquare /></span> - majessietic
+      </a>
       <br/>
-      <a href='https://www.instagram.com/majessietic' style={linkStyle}><span style={textStyle}><FaInstagram /></span> - majessietic</a>
+      <a href='https://www.instagram.com/majessietic' style={linkStyle}>
+        <span style={textStyle}><FaInstagram /></span> - majessietic
+      </a>
       <br/>
-      <a href='https://www.twitter.com/majessietic' style={linkStyle}><span style={textStyle}><FaTwitterSquare /></span> - Twitter</a>
+      <a href='https://www.twitter.com/majessietic' style={linkStyle}>
+        <span style={textStyle}><FaTwitterSquare /></span> - majessietic
+      </a>
       <br/>
-      <a href='mailto:creators.nuke@gmail.com' style={linkStyle}><span style={textStyle}><FaEnvelope /></span> - creators.nuke@gmail.com</a>
+      <a href='mailto:creators.nuke@gmail.com' style={linkStyle}>
+        <span style={textStyle}><FaEnvelope /></span> - creators.nuke@gmail.com
+      </a>
     </span>
   ),
   something: (
