@@ -10,7 +10,8 @@ body {
   font-family: 'Lato', sans-serif;
   margin: 0;
   height: auto;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -396,6 +397,7 @@ template {
 .terminalStyle {
   width: 45em;
   height: 25em;
+  padding-bottom: 60px;
 }
 
 .circleButton {
@@ -485,6 +487,10 @@ template {
 }
 
 @media (min-width: 850px) {
+  html,
+  body {
+    overflow: hidden;
+  }
   .content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -502,6 +508,21 @@ template {
 @media (max-width: 850px) {
   .terminalStyle {
     height: 15em;
+  }
+}
+
+@media (max-width: 500px) {
+  .terminalWindow {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 350px) {
+  .titleTitle {
+    font-size: 10px;
+  }
+  .terminalWindow {
+    font-size: 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */
