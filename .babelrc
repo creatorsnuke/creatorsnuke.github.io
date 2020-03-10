@@ -16,7 +16,8 @@
       "module-resolver", {
         "root": ["./src"],
         "alias": {
-          "@Component": "./src/Component"
+          "@Component": "./src/Component",
+          "@Style": "./src/Style"
         }
       }
     ]
