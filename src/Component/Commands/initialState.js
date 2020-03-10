@@ -14,20 +14,56 @@ const textStyle = {
 
 export const initialState = {
   help: (
-    <span>List of command: 
-      <br/>about
-      <br/>contact
-      <br/>experience
-      <br/>education
-      <br/>skills
+    <span>List of commands:
+      <br/>
+      <br/>
+      <table>
+        <tbody>
+          <tr>
+            <td>about</td>
+            <td>introduction or about me</td>
+          </tr>
+          <tr>
+            <td>showcase</td>
+            <td>projects and some stuffs</td>
+          </tr>
+          <tr>
+            <td>skills</td>
+            <td>tools and techs</td>
+          </tr>
+          <tr>
+            <td>clear or cls</td>
+            <td>delete history logs</td>
+          </tr>
+          <tr>
+            <td>contact</td>
+            <td>information or getting in touch</td>
+          </tr>
+          <tr>
+            <td>experience</td>
+            <td>job history</td>
+          </tr>
+          <tr>
+            <td>education</td>
+            <td>affiliated University</td>
+          </tr>
+          <tr>
+            <td>help</td>
+            <td>by the name itself</td>
+          </tr>
+        </tbody>
+      </table>
     </span>
   ),
   about: (
     <span>Hello there,
       <br/>
-      I&apos;m Jessie Tarrosa a certain handsome random guy who&apos;s currently needed a job as a web developer.
       <br/>
-      
+      I&apos;m Jessie Tarrosa a certain handsome random guy who&apos;s having a little bit skills in web developing 
+      and also have a passion about creating and designing things. 
+      <br/>
+      <br/>
+      Swipe right if you want to know more... just kidding
     </span>
   ),
   education: (
@@ -37,13 +73,10 @@ export const initialState = {
     </span>
   ),
   skills: (
-    <span>Framework/Library/DB: Express, React, Vue, Laravel, Bootstrap, Bulma, Materialize, MongoDB and MySQL
+    <span>Tools and Technologies:
       <br/>
-      <br/>
-      Languages: JavaScript, PHP, HTML, CSS and C
-      <br/>
-      <br/>
-      Tools: Nodejs, Git, Vscode, Browsers, Adobe (Ai, Ps & Id) & xampp
+      <br/>Express, React, Vue, Laravel, Bootstrap, Bulma, Materialize, MongoDB, MySQL, JavaScript, JSON, PHP, HTML, CSS, SASS, Objective-C, Nodejs
+      <br/>Postman, Git, Vscode and Adobe (Ai, Ps & Id)
     </span>
   ),
   contact: (
@@ -76,6 +109,20 @@ export const initialState = {
   experience: (
     <span>
       Hire me to unlock experience...
+    </span>
+  ),
+  showcase: (
+    <span>
+      <a href='https://github.com/creatorsnuke/react-calculator' style={linkStyle}>
+        react-calculator
+      </a>
+      <br/>
+      <a href='https://github.com/majessietic/react-tictactoe' style={linkStyle}>
+        react-tictactoe
+      </a>
+      <br/>
+      <br/>
+      <span>WIP...</span>
     </span>
   )
 }

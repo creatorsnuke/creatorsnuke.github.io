@@ -42,6 +42,19 @@ main {
   margin: auto;
 }
 
+tbody {
+  display: block;
+  width: 100%;
+}
+
+td {
+  text-align: left;
+
+  &:nth-child(1) {
+    min-width: 10rem;
+  }
+}
+
 .content {
   background: $mainColor;
 }
