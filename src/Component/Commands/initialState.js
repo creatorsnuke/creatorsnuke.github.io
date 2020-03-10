@@ -25,7 +25,9 @@ export const initialState = {
   about: (
     <span>Hello there,
       <br/>
-      I&apos;m Jessie Tarrosa a web developer living in Cebu
+      I&apos;m Jessie Tarrosa a certain handsome random guy who&apos;s currently needed a job as a web developer.
+      <br/>
+      
     </span>
   ),
   education: (
