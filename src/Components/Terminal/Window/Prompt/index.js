@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
-import { TerminalContext } from '@Component/TerminalContext'
+import { TerminalContext } from '@Context/TerminalContext'
 
-export function TerminalWindowPrompt ({ userInputRef }) {
+export function Prompt ({ userInputRef }) {
   const { executeCommand } = useContext(TerminalContext)
   const [input, setInput] = useState('')
 

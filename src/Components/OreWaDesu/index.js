@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { TerminalContext } from '@Component/TerminalContext'
+import { TerminalContext } from '@Context/TerminalContext'
 
-export const OpenTerminal = () => {
+export const OreWaDesu = (props) => {
   const { terminal, setTerminal } = useContext(TerminalContext)
 
   const openTerminal = () => {
@@ -15,8 +15,8 @@ export const OpenTerminal = () => {
   return (
     <div className='profile-inner'>
       <div className='circleButton' onClick={openTerminal}></div>
-      <h1>Jessie Tarrosa</h1>
-      <h2>Web Developer</h2>
+      <h1>{props.name}</h1>
+      <h2>{props.title}</h2>
     </div>
   )
 }

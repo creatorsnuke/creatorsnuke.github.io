@@ -1,9 +1,9 @@
 import React, { createRef, useContext, useEffect } from 'react'
-import { TerminalWindowOutput } from '@Component/TerminalWindowOutput'
-import { TerminalWindowPrompt } from '@Component/TerminalWindowPrompt'
-import { TerminalContext } from '@Component/TerminalContext'
+import { Output } from '@Components/Terminal/Window/Output'
+import { Prompt } from '@Components/Terminal/Window/Prompt'
+import { TerminalContext } from '@Context/TerminalContext'
 
-export function TerminalWindow () {
+export function Window () {
   const { terminalCommands } = useContext(TerminalContext)
   const userInputRef = createRef()
   const textAreaFocus = () => userInputRef.current.focus()
@@ -17,9 +17,9 @@ export function TerminalWindow () {
   return (
     <div id='terminalWindow' className='terminalWindow' onClick={textAreaFocus}>
       { terminalCommands.map((input, index) => (
-        <TerminalWindowOutput command={input.command} output={input.output} initial={input.initial} key={index} />
+        <Output command={input.command} output={input.output} initial={input.initial} key={index} />
       ))}
-      <TerminalWindowPrompt userInputRef={userInputRef} />
+      <Prompt userInputRef={userInputRef} />
     </div>
   )
 }

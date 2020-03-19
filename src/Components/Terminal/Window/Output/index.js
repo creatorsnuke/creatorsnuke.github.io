@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function TerminalWindowOutput (props) {
+export function Output (props) {
 
   const WindowStyleOutput = {
     marginBottom: '0.5em'

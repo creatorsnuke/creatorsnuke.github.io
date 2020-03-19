@@ -1,13 +1,13 @@
 import React from 'react'
-import { TitleBar } from '@Component/TitleBar'
-import { TerminalWindow } from '@Component/TerminalWindow'
+import { TitleBar } from '@Components/Terminal/TitleBar'
+import { Window } from '@Components/Terminal/Window'
 
-export const TerminalModal = (props) => {
+export const Terminal = (props) => {
   return (
     <div className='container'>
       <div className='terminalStyle'>
         <TitleBar closeTerminal={props.closeTerminal} title='jessie@creatorsnuke: ~' />
-        <TerminalWindow />
+        <Window />
       </div>
     </div>
   )

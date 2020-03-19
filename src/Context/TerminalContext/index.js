@@ -1,6 +1,6 @@
 import React, {useState, createContext} from 'react'
-import { state } from '@Component/TerminalContext/state'
-import { initialState } from '@Component/Commands/initialState'
+import { state } from '@Context/TerminalContext/state'
+import { initialState } from '@Context/TerminalContext/Commands/initialState'
 
 export const TerminalContext = createContext({
   terminalCommands: [],

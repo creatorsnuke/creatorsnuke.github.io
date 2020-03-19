@@ -1,7 +1,7 @@
 import React from 'react'
-import { Author } from '@Component/Author'
-import { OpenTerminal } from '@Components/OpenTerminal'
-import { TerminalContextProvider } from '@Components/TerminalContext'
+import { Github } from '@Components/Github'
+import { OreWaDesu } from '@Components/OreWaDesu'
+import { TerminalContextProvider } from '@Context/TerminalContext'
 import { TerminalManager } from '@Components/TerminalManager'
 
 export function App () {
@@ -9,9 +9,9 @@ export function App () {
     <TerminalContextProvider>
       <main>
         <div className='content'>
-          <Author />
+          <Github name='Github' />
           <div className='profile'>
-            <OpenTerminal />
+            <OreWaDesu name='Jessie Tarrosa' title='Web Developer' />
           </div>
           <div className="terminal-window">
             <TerminalManager />

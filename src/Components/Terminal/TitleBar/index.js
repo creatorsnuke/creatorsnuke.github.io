@@ -1,5 +1,5 @@
 import React from 'react'
-import { TitleButton } from '@Component/TitleButton'
+import { TitleButton } from '@Components/Terminal/TitleBar/TitleButton'
 
 export function TitleBar (props) {
 
