@@ -113,12 +113,16 @@ export const initialState = {
   ),
   showcase: (
     <span>
-      <a href='https://github.com/creatorsnuke/react-calculator' style={linkStyle}>
+      <a href='https://creatorsnuke.github.io/react-calculator/' style={linkStyle}>
         react-calculator
       </a>
       <br/>
-      <a href='https://github.com/majessietic/react-tictactoe' style={linkStyle}>
+      <a href='https://majessietic.github.io/react-tictactoe/' style={linkStyle}>
         react-tictactoe
+      </a>
+      <br />
+      <a href='https://majessietic.github.io/react-todo/' style={linkStyle}>
+        react-todo
       </a>
       <br/>
       <br/>
