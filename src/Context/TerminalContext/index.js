@@ -2,6 +2,11 @@ import React, {useState, createContext} from 'react'
 import { state } from '@Context/TerminalContext/state'
 import { initialState } from '@Context/TerminalContext/Commands/initialState'
 
+const status = {
+  success: '#8dd39e',
+  error: '#d7566a'
+}
+
 export const TerminalContext = createContext({
   terminalCommands: [],
   setTerminalCommands: () => {},
@@ -18,12 +23,14 @@ export function TerminalContextProvider (props) {
     
     const newCommand = {
       initial: false,
+      status: status.success,
       command: input,
       output: commands[input]
     }
 
     const errorCommand = {
       initial: false,
+      status: status.error,
       command: input,
       output: `Invalid command: ${input}`
     }

@@ -17,7 +17,13 @@ export function Window () {
   return (
     <div id='terminalWindow' className='terminalWindow' onClick={textAreaFocus}>
       { terminalCommands.map((input, index) => (
-        <Output command={input.command} output={input.output} initial={input.initial} key={index} />
+        <Output 
+          status={input.status}
+          command={input.command} 
+          output={input.output} 
+          initial={input.initial} 
+          key={index} 
+        />
       ))}
       <Prompt userInputRef={userInputRef} />
     </div>

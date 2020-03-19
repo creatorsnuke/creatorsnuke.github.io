@@ -22,7 +22,7 @@ export function Output (props) {
 
   const StyleInput = {
     marginRight: '0.5em',
-    color: '#8dd39e'
+    color: `${props.status}`
   }
 
   const TextAreaStyle = {

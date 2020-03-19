@@ -18,6 +18,7 @@ export const state = [
       <span><span style={textStyle}><FaFlask /></span> CreatorsNuke (v1.0.1) by Jessie Tarrosa
         <br/> Type <span style={status}>help</span> to see the list of commands or <span style={status}>something</span> to see the magic
       </span>
-    )
+    ),
+    status: '#8dd39e'
   }
 ]
