@@ -1,8 +1,8 @@
 import React from 'react'
 import { Author } from '@Component/Author'
-import { OpenTerminal } from '@Component/OpenTerminal'
-import { TerminalContextProvider } from '@Component/TerminalContext'
-import { TerminalManager } from '@Component/TerminalManager'
+import { OpenTerminal } from '@Components/OpenTerminal'
+import { TerminalContextProvider } from '@Components/TerminalContext'
+import { TerminalManager } from '@Components/TerminalManager'
 
 export function App () {
   return (
