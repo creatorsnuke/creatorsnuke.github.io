@@ -15,7 +15,11 @@ export function Window () {
   })
   
   return (
-    <div id='terminalWindow' className='terminalWindow' onClick={textAreaFocus}>
+    <div 
+      id='terminalWindow' 
+      className='terminalWindow' 
+      onClick={textAreaFocus}
+    >
       { terminalCommands.map((input, index) => (
         <Output 
           status={input.status}

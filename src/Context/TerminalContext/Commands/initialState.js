@@ -59,8 +59,9 @@ export const initialState = {
     <span>Hello there,
       <br/>
       <br/>
-      I&apos;m Jessie Tarrosa a certain handsome random guy who&apos;s having a little bit skills in web developing 
-      and also have a passion about creating and designing things. 
+      I&apos;m Jessie Tarrosa a certain handsome random guy who&apos;s 
+        having a little bit skills in web developing 
+        and also have a passion about creating and designing things. 
       <br/>
       <br/>
       Swipe right if you want to know more... just kidding
@@ -75,7 +76,8 @@ export const initialState = {
   skills: (
     <span>Tools and Technologies:
       <br/>
-      <br/>Express, React, Vue, Laravel, Bootstrap, Bulma, Materialize, MongoDB, MySQL, JavaScript, JSON, PHP, HTML, CSS, SASS, Objective-C, Nodejs
+      <br/>Express, React, Vue, Laravel, Bootstrap, Bulma, Materialize, MongoDB, MySQL, 
+        JavaScript, JSON, PHP, HTML, CSS, SASS, Objective-C, Nodejs
       <br/>Postman, Git, Vscode and Adobe (Ai, Ps & Id)
     </span>
   ),

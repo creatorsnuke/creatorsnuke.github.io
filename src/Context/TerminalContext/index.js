@@ -51,7 +51,14 @@ export function TerminalContextProvider (props) {
   }
 
   return(
-    <TerminalContext.Provider value={{ terminalCommands, setTerminalCommands, executeCommand, terminal, setTerminal }}>
+    <TerminalContext.Provider 
+      value={{ 
+        terminalCommands, 
+        setTerminalCommands, 
+        executeCommand, 
+        terminal, 
+        setTerminal 
+      }}>
       {props.children}
     </TerminalContext.Provider>
   )
