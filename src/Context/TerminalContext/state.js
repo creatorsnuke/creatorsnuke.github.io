@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaVial } from 'react-icons/fa'
+import { FaFlask } from 'react-icons/fa'
 
 const status = {
   color: '#8dd39e'
@@ -15,8 +15,8 @@ export const state = [
     initial: true,
     command: 'hello',
     output: (
-      <span><span style={textStyle}><FaVial /></span> CreatorsNuke (v1.0.0) by Jessie Tarrosa
-        <br/> Type something to see the magic or <span style={status}>help</span>
+      <span><span style={textStyle}><FaFlask /></span> CreatorsNuke (v1.0.1) by Jessie Tarrosa
+        <br/> Type <span style={status}>help</span> to see the list of commands or <span style={status}>something</span> to see the magic
       </span>
     )
   }
