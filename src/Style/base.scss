@@ -112,7 +112,6 @@ td {
   right: 0;
   padding: .5rem 1rem;
   border-bottom-left-radius: 5px;
-  -webkit-transition: 300ms;
   transition: 300ms;
   font-family: 'Overlock', Arial, Helvetica, sans-serif;
   font-size: 70%;
@@ -123,7 +122,6 @@ td {
   color: $secondColor;
   text-decoration: none;
   display: block;
-  -webkit-transition: 300ms;
   transition: 300ms;
 }
 
@@ -231,6 +229,7 @@ td {
   background: url('https://avatars2.githubusercontent.com/u/32976964?s=460&v=4');
   background-repeat: no-repeat;
   background-size: cover;
+  object-fit: cover;
   border-radius: 50%;
   outline-style: none;
 }
