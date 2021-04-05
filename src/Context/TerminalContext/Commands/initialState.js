@@ -90,7 +90,7 @@ export const initialState = {
         <span style={textStyle}><FaFacebookSquare /></span> - majessietic
       </a>
       <br/>
-      <a href='https://www.instagram.com/majessietic' style={linkStyle}>
+      <a href='https://www.instagram.com/oreoseenoevil' style={linkStyle}>
         <span style={textStyle}><FaInstagram /></span> - majessietic
       </a>
       <br/>
@@ -115,16 +115,46 @@ export const initialState = {
   ),
   showcase: (
     <span>
-      <a href='https://creatorsnuke.github.io/react-calculator/' style={linkStyle}>
-        react-calculator
+      <a href='https://creatorsnuke.github.io/react-calculator/'
+        target='_blank' rel='noopener noreferrer' 
+        style={linkStyle}
+      >
+        Calculator App
       </a>
       <br/>
-      <a href='https://majessietic.github.io/react-tictactoe/' style={linkStyle}>
-        react-tictactoe
+      <a href='https://oreoseenoevil.github.io/react-tictactoe/'
+        target='_blank' rel='noopener noreferrer' 
+        style={linkStyle}
+      >
+        Tic Tac Toe Game
       </a>
       <br />
-      <a href='https://majessietic.github.io/react-todo/' style={linkStyle}>
-        react-todo
+      <a href='https://oreoseenoevil.github.io/react-todo/'
+        target='_blank' rel='noopener noreferrer' 
+        style={linkStyle}
+      >
+        Todo App
+      </a>
+      <br/>
+      <a href='https://oreoseenoevil.github.io/roll-the-dice/'
+        target='_blank' rel='noopener noreferrer' 
+        style={linkStyle}
+      >
+        Roll the Dice
+      </a>
+      <br/>
+      <a href='https://oreoseenoevil.github.io/random-ui-colors/'
+        target='_blank' rel='noopener noreferrer' 
+        style={linkStyle}
+      >
+        Random Palette Colors
+      </a>
+      <br/>
+      <a href='https://oreoseenoevil.github.io/analog-clock/'
+        target='_blank' rel='noopener noreferrer' 
+        style={linkStyle}
+      >
+        Analog Clock
       </a>
       <br/>
       <br/>
