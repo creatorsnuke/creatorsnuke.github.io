@@ -16,8 +16,8 @@ export const state = [
     command: 'hello',
     output: (
       <span><span style={textStyle}><FaFlask /></span> CreatorsNuke (v1.0.1) by Jessie Tarrosa
-        <br/> Type 
-        <span style={status}>help</span> to see the list of commands or 
+        <br/> Type&nbsp;
+        <span style={status}>help</span> to see the list of commands or&nbsp;
         <span style={status}>something</span> to see the magic
       </span>
     ),
