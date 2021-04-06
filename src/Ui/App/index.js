@@ -1,6 +1,7 @@
 import React from 'react'
 import { Github } from '@Components/Github'
 import { OreWaDesu } from '@Components/OreWaDesu'
+import { TerminalIcon } from '@Components/TerminalIcon'
 import { TerminalContextProvider } from '@Context/TerminalContext'
 import { TerminalManager } from '@Components/TerminalManager'
 
@@ -10,6 +11,7 @@ export function App () {
       <main>
         <div className='content'>
           <Github name='Github' />
+          <TerminalIcon />
           <div className='profile'>
             <OreWaDesu name='Jessie Tarrosa' title='Web Developer' />
           </div>

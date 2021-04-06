@@ -1,5 +1,7 @@
 $mainColor: #e1e1e1;
 $secondColor: #333;
+$thirdColor: #2b2b2b;
+$fourthColor: #fdfdfd;
 
 %boxshadow {
   box-shadow: 
@@ -125,9 +127,53 @@ td {
   transition: 300ms;
 }
 
+
 .author:hover,
 .author:active {
   @extend %hoverboxshadow;
+}
+
+.terminal-icon {
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  background: #2b2b2b;
+  width: 4rem;
+  height: 3.5rem;
+  z-index: 1;
+  border-top-left-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+  overflow: hidden;
+  transition: 300ms;
+}
+
+.terminal-icon::before {
+  content: '';
+  height: 1rem;
+  position: absolute;
+  border-right: .5rem solid $fourthColor;
+  border-bottom: .5rem solid $fourthColor;
+  width: 1rem;
+  top: 1rem;
+  transform: rotate(-45deg);
+  z-index: 2;
+  left: .3rem;
+}
+
+.terminal-icon::after {
+  content: '';
+  background: $fourthColor;
+  height: .4rem;
+  width: 1.5rem;
+  z-index: 3;
+  position: absolute;
+  top: 2.5rem;
+  left: 2.1rem;
+}
+
+.terminal-icon:hover {
+  box-shadow: inset 21px 21px 32px #111111,
+              inset -21px -21px 32px #454545
 }
 
 .titleBar {
