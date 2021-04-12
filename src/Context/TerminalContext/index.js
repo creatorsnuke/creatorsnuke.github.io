@@ -17,6 +17,7 @@ export function TerminalContextProvider (props) {
   const [terminalCommands, setTerminalCommands] = useState(state)
   const [commands, setCommands] = useState(initialState)
   const [terminal, setTerminal] = useState('TerminalModal')
+  const [minimized, setMinimized] = useState(false)
 
   const executeCommand = (input) => {
     input = input.toLowerCase()
@@ -60,7 +61,9 @@ export function TerminalContextProvider (props) {
         executeCommand, 
         terminal, 
         setTerminal,
-        setCommands
+        setCommands,
+        minimized,
+        setMinimized
       }}>
       {props.children}
     </TerminalContext.Provider>

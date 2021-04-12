@@ -97,32 +97,19 @@ td {
 }
 
 .terminalStyle {
+  position: relative;
   width: 45em;
   height: 20em;
-  padding-bottom: 60px;
   animation-name: blowUp;
   animation-duration: 1s;
 }
 
 .terminalStyle.minimized {
-  animation-name: minimized;
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
-}
-
-@keyframes minimized {
-  0% {
-    opacity: 1;
-  }
-
-  80% {
-    opacity: 0.4;
-    transform: translate(100px, -100px);
-  }
-
-  100% {
-    opacity: 1;
-  }
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  width: 4rem;
+  height: 3.5rem;
 }
 
 @keyframes blowUp {
