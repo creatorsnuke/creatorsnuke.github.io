@@ -94,6 +94,12 @@ td {
   align-items: center;
   height: 100%;
   width: 100%;
+}
+
+.terminalStyle {
+  width: 45em;
+  height: 20em;
+  padding-bottom: 60px;
   animation-name: blowUp;
   animation-duration: 1s;
 }
@@ -101,9 +107,11 @@ td {
 @keyframes blowUp {
   0% {
     transform: scale(0);
+    opacity: 0.3;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
   }
 }
 
@@ -245,12 +253,6 @@ td {
   background: rgba(255, 255, 255, 1);; 
 }
 
-.terminalStyle {
-  width: 45em;
-  height: 25em;
-  padding-bottom: 60px;
-}
-
 .circleButton {
   display: flex;
   justify-content: center;
@@ -278,8 +280,44 @@ td {
   object-fit: cover;
   border-radius: 50%;
   outline-style: none;
+  animation-name: rotate-photo;
+  animation-delay: 0.5s;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
 }
 
+h1.profile-name,
+h2.profile-job {
+  animation-name: show-up;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+
+@keyframes show-up {
+  0% {
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: .5;
+  }
+
+  80% {
+    transform: translateY(0px);
+    opacity: .8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate-photo {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 
 @keyframes bondJamesBond {
   0% {
@@ -353,7 +391,7 @@ td {
 
 @media (max-width: 850px) {
   .terminalStyle {
-    height: 17.5em;
+    height: 15.5em;
   }
 }
 
