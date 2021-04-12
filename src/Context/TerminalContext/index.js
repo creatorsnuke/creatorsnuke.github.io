@@ -35,11 +35,13 @@ export function TerminalContextProvider (props) {
       output: `Invalid command: ${input}`
     }
 
-    if (input === 'cls' || input === 'clear') {
+    if (['clear', 'clrscr', 'cls'].includes(input)) {
       return setTerminalCommands([])
+    } else if (['exit', 'closed'].includes(input)) {
+      return setTerminalCommands([]), setTerminal(null)
     }
     
-    if (!commands.hasOwnProperty(input)) {
+    if (!Object.prototype.hasOwnProperty.call(commands, input)) {
       return setTerminalCommands([
         ...terminalCommands, errorCommand
       ])
@@ -57,7 +59,8 @@ export function TerminalContextProvider (props) {
         setTerminalCommands, 
         executeCommand, 
         terminal, 
-        setTerminal 
+        setTerminal,
+        setCommands
       }}>
       {props.children}
     </TerminalContext.Provider>
