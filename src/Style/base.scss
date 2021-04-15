@@ -121,6 +121,9 @@ div.profile-image {
   background: $lightColor;
   z-index: 11;
   @extend %boxshadowUpandDown;
+  animation-name: bondJamesBond;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
 }
 
 div.profile-image::after {
@@ -133,7 +136,40 @@ div.profile-image::after {
   object-fit: cover;
   border-radius: 50%;
   outline-style: none;
+  animation-name: rotate-photo;
+  animation-delay: 0.5s;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
 }
+
+@keyframes rotate-photo {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes bondJamesBond {
+  0% {
+    transform: translateX(1000px);
+  }
+  80% {
+    transform: translateX(0px);
+    border-radius: 7em;
+    height: 7em;
+    width: 7em;
+  }
+  90% {
+    border-radius: 50%;
+    height: 12em;
+    width: 12em;
+  }
+  100% {
+    border-radius: 50%;
+    height: 10em;
+    width: 10em;
+  }
+}
+
 
 span.profile-name {
   margin-top: 1rem;
