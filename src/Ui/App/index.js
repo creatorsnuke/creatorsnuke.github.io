@@ -3,9 +3,9 @@ import { TerminalContextProvider } from '@Context/TerminalContext'
 import { NavBar } from '@Components/NavBar'
 import { Banner } from '@Components/Banner'
 import { OreWaDesu } from '@Components/OreWaDesu'
+import { TerminalManager } from '@Components/TerminalManager'
 // import { Github } from '@Components/Github'
 // import { TerminalIcon } from '@Components/TerminalIcon'
-// import { TerminalManager } from '@Components/TerminalManager'
 
 export function App () {
   return (
@@ -13,10 +13,13 @@ export function App () {
       <main>
         <NavBar title='Oreo' />
         <Banner />
-        <OreWaDesu 
-          name='Jessie Tarrosa'
-          job='Frontend Developer'
-        />
+        <div className="content">
+          <OreWaDesu 
+            name='Jessie Tarrosa'
+            job='Frontend Developer'
+          />
+          <TerminalManager />
+        </div>
       </main>
     </TerminalContextProvider>
   )

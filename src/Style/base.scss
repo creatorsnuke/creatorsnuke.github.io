@@ -41,6 +41,7 @@ body {
   color: $foregroundColor;
   font-family: 'Lato', sans-serif;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 main {
@@ -57,7 +58,6 @@ nav.nav-bar {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 50px;
   @extend %boxshadowdark;
   z-index: 1;
 }
@@ -72,10 +72,10 @@ div.banner-terminal {
   background-color: $terminalColor;
   width: 100%;
   height: 5em;
-  padding: 60px 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 60px 20px;
   color: $lightColor;
   font-family: consolas, sans-serif;
 }
@@ -89,20 +89,153 @@ span.dollar::before {
   color: $primary;
 }
 
-div.profile-inner {
-  width: 100%;
-  padding: 200px;
+div.content {
   position: relative;
-  background-color: $backgroundColor;
+  width: 100%;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  flex-direction: column;
+}
+
+div.profile-info {
+  position: absolute;
+  top: -95px;
+  width: 100%;
+  z-index: 10;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.profile-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10em;
+  width: 10em;
+  border-radius: 50%;
+  background: $lightColor;
+  z-index: 11;
   @extend %boxshadowUpandDown;
+}
+
+div.profile-image::after {
+  content: '';
+  height: 95%;
+  width: 95%;
+  background: url('https://avatars2.githubusercontent.com/u/32976964?s=460&v=4');
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  border-radius: 50%;
+  outline-style: none;
+}
+
+span.profile-name {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+span.profile-job {
+  margin-top: .5rem;
 }
 
 span.profile-name,
 span.profile-job {
-  margin: 1rem;
   color: $foregroundColor;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+.terminalStyle {
+  margin-top: 200px;
+  width: 45em;
+  height: 20em;
+  animation-name: blowUp;
+  animation-duration: 1s;
+}
+
+@keyframes blowUp {
+  0% {
+    transform: scale(0);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.titleBar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eae8e9;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid rgba(66, 66, 66, 0.5);
+}
+
+.titleBtn {
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  margin: 0.2em;
+
+  &.red {
+    background: #fa615c;
+    cursor: pointer;
+  }
+
+  &.yellow {
+    background: #ffbd48;
+  }
+
+  &.green {
+    background: #3fc950;
+  }
+}
+
+.titleButton {
+  display: flex;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  padding-left: 0.6em;
+}
+
+.titleTitle {
+  align-self: center;
+  font-family: monospace;
+  height: 100%;
+}
+
+.titleRemark {
+  display: flex;
+  padding-right: 0.6em;
+  height: 100%;
+}
+
+.terminalWindow {
+  background-color: rgb(23, 42, 69);
+  border-radius: 0 0 5px 5px;
+  height: 100%;
+  padding: 1.2em 1.5em 1.2em 1.5em;
+  line-height: 1.2em;
+  flex-direction: column;
+  overflow-y: hidden;
+  overflow: auto;
+}
+
+.terminalWindow::-webkit-scrollbar {
+  width: 2px;
+}
+.terminalWindow::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+.terminalWindow::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 1);; 
 }
