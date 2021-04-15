@@ -1,12 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export const OreWaDesu = (props) => {
 
   return (
-    <div className='profile-inner'>
-      <div className='circleButton'></div>
-      <h1 className='profile-name'>{props.name}</h1>
-      <h2 className='profile-job'>{props.title}</h2>
+    <div className="profile-inner">
+      <div className="profile-image"></div>
+      <span className="profile-name">{props.name}</span>
+      <span className="profile-job">{props.job}</span>
     </div>
   )
+}
+
+OreWaDesu.propTypes = {
+  name: PropTypes.string.isRequired,
+  job: PropTypes.string.isRequired,
 }

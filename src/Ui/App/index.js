@@ -1,24 +1,22 @@
 import React from 'react'
-import { Github } from '@Components/Github'
-import { OreWaDesu } from '@Components/OreWaDesu'
-import { TerminalIcon } from '@Components/TerminalIcon'
 import { TerminalContextProvider } from '@Context/TerminalContext'
-import { TerminalManager } from '@Components/TerminalManager'
+import { NavBar } from '@Components/NavBar'
+import { Banner } from '@Components/Banner'
+import { OreWaDesu } from '@Components/OreWaDesu'
+// import { Github } from '@Components/Github'
+// import { TerminalIcon } from '@Components/TerminalIcon'
+// import { TerminalManager } from '@Components/TerminalManager'
 
 export function App () {
   return (
     <TerminalContextProvider>
       <main>
-        <div className='content'>
-          <Github name='Github' />
-          <TerminalIcon />
-          <div className='profile'>
-            <OreWaDesu name='Jessie Tarrosa' title='Web Developer' />
-          </div>
-          <div className="terminal-window">
-            <TerminalManager />
-          </div>
-        </div>
+        <NavBar title='Oreo' />
+        <Banner />
+        <OreWaDesu 
+          name='Jessie Tarrosa'
+          job='Frontend Developer'
+        />
       </main>
     </TerminalContextProvider>
   )
