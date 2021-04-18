@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { Terminal } from '@Components/Terminal'
+import { TerminalIcon } from '@Components/TerminalIcon'
 import { TerminalContext } from '@Context/TerminalContext'
 
 export const TerminalManager = () => {
@@ -9,5 +10,9 @@ export const TerminalManager = () => {
   if (terminal) {
     return <Terminal closeTerminal={closeTerminal} />
   }
-  return null
+  return (
+    <div className="show-case">
+      <TerminalIcon />
+    </div>
+  )
 }

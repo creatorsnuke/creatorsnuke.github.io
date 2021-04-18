@@ -16,7 +16,7 @@ export function App () {
         <div className="content">
           <OreWaDesu 
             name='Jessie Tarrosa'
-            job='Frontend Developer'
+            job='Developer'
           />
           <TerminalManager />
         </div>

@@ -92,17 +92,70 @@ span.dollar::before {
 div.content {
   position: relative;
   width: 100%;
+  height: 100%;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+div.show-case {
+  margin-top: 9em;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
+.terminal-icon {
+  position: relative;
+  background: $darkColor;
+  width: 4rem;
+  height: 3.5rem;
+  z-index: 1;
+  border-radius: .5rem;
+  overflow: hidden;
+  transition: 300ms;
+  animation-name: blowUp;
+  animation-duration: 300ms;
+}
+
+.terminal-icon::before {
+  content: '';
+  height: 1rem;
+  top: 1rem; 
+  position: absolute;
+  border-right: .4rem solid $lightColor;
+  border-bottom: .4rem solid $lightColor;
+  width: 1rem;
+  transform: rotate(-45deg);
+  z-index: 2;
+  left: .2rem;
+}
+
+.terminal-icon::after {
+  content: '';
+  background: $lightColor;
+  height: .4rem;
+  width: 1.5rem;
+  z-index: 3;
+  position: absolute;
+  top: 2.5rem;
+  left: 1.8rem;
+}
+
+.terminal-icon:hover {
+  box-shadow: inset 21px 21px 32px #111111,
+              inset -21px -21px 32px #454545
+}
+
 div.profile-info {
   position: absolute;
-  top: -95px;
-  width: 100%;
+  top: -55px;
+  height: 11em;
+  width: 11em;
   z-index: 10;
   text-align: center;
   display: flex;
@@ -115,8 +168,8 @@ div.profile-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10em;
-  width: 10em;
+  height: 100%;
+  width: 100%;
   border-radius: 50%;
   background: $lightColor;
   z-index: 11;
@@ -124,6 +177,7 @@ div.profile-image {
   animation-name: bondJamesBond;
   animation-duration: 3s;
   animation-iteration-count: 1;
+  transition: 500ms;
 }
 
 div.profile-image::after {
@@ -136,13 +190,14 @@ div.profile-image::after {
   object-fit: cover;
   border-radius: 50%;
   outline-style: none;
-  animation-name: rotate-photo;
+  transition: 300ms ease-in;
+  animation-name: rotate;
   animation-delay: 0.5s;
   animation-duration: 1.5s;
   animation-iteration-count: 1;
 }
 
-@keyframes rotate-photo {
+@keyframes rotate {
   100% {
     transform: rotate(-360deg);
   }
@@ -154,45 +209,62 @@ div.profile-image::after {
   }
   80% {
     transform: translateX(0px);
-    border-radius: 7em;
+    border-radius: 50%;
     height: 7em;
     width: 7em;
   }
   90% {
     border-radius: 50%;
-    height: 12em;
-    width: 12em;
+    height: 12.5em;
+    width: 12.5em;
   }
   100% {
     border-radius: 50%;
-    height: 10em;
-    width: 10em;
+    height: 11em;
+    width: 11em;
   }
 }
 
+div.hover-info {
+  top: 0;
+  z-index: 11;
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1rem;
+  transition: 300ms ease-in;
+}
+
+.profile-info:hover .profile-image::after {
+  transform: rotateX(90deg);
+}
+
+.profile-info:hover .hover-info {
+  margin-top: 4em;
+  opacity: 1;
+}
 
 span.profile-name {
-  margin-top: 1rem;
-  font-size: 1.5rem;
-}
-
-span.profile-job {
-  margin-top: .5rem;
-}
-
-span.profile-name,
-span.profile-job {
-  color: $foregroundColor;
-  font-weight: 200;
+  margin-bottom: .5rem;
   letter-spacing: 2px;
+  font-weight: 700;
+}
+
+span.profile-job {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 550;
 }
 
 .terminalStyle {
-  margin-top: 200px;
-  width: 45em;
-  height: 20em;
+  margin-top: 9em;
+  width: 55vw;
+  height: 25em;
   animation-name: blowUp;
-  animation-duration: 1s;
+  animation-duration: 1000ms;
 }
 
 @keyframes blowUp {
@@ -274,4 +346,167 @@ span.profile-job {
 }
 .terminalWindow::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 1);; 
+}
+
+@media (max-width: 1500px) {
+  .terminalStyle {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 1350px) {
+  div.Typewriter {
+    padding: 0 90px;
+  }
+
+  .terminalStyle {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  div.Typewriter {
+    padding: 0 80px;
+  }
+
+  .terminalStyle {
+    width: 75vw;
+  }
+}
+
+@media (max-width: 1000px) {
+  div.Typewriter {
+    padding: 0 70px;
+  }
+
+  .terminalStyle {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 900px) {
+  div.Typewriter {
+    padding: 0 60px;
+  }
+
+  .terminalStyle {
+    width: 85vw;
+  }
+}
+
+@media (max-width: 800px) {
+  div.Typewriter {
+    padding: 0 50px;
+  }
+
+  nav.nav-bar h3.title {
+    font-size: 1.1rem;
+  }
+
+  .terminalStyle {
+    width: 90vw;
+  }
+}
+
+
+@media (max-width: 500px) {
+  nav.nav-bar h3.title {
+    font-size: 1rem;
+  }
+
+  div.banner-terminal {
+    padding: 30px 10px;
+    font-size: .8rem;
+  }
+
+  div.Typewriter {
+    padding: 0 20px;
+  }
+
+  div.profile-info {
+    top: -20px;
+    height: 8em;
+    width: 8em;
+  }
+
+  @keyframes bondJamesBond {
+    0% {
+      transform: translateX(1000px);
+    }
+    80% {
+      transform: translateX(0px);
+      border-radius: 50%;
+      height: 6em;
+      width: 6em;
+    }
+    90% {
+      border-radius: 50%;
+      height: 10em;
+      width: 10em;
+    }
+    100% {
+      border-radius: 50%;
+      height: 8em;
+      width: 8em;
+    }
+  }
+
+  .profile-info:hover .hover-info {
+    margin-top: 1.7em;
+  }
+
+  .terminalWindow {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 350px) {
+  div.banner-terminal {
+    padding: 30px 10px;
+    font-size: .6rem;
+  }
+
+  .titleTitle {
+    font-size: 10px;
+  }
+
+  .terminalWindow {
+    font-size: 10px;
+  }
+}
+
+@media (max-height: 850px) {
+  .terminalStyle {
+    height: 20em;
+  }
+}
+
+@media (max-height: 750px) {
+  .terminalStyle {
+    height: 18em;
+  }
+}
+
+@media (max-height: 720px) {
+  .terminalStyle {
+    height: 16em;
+  }
+}
+
+@media (max-height: 650px) {
+  .terminalStyle {
+    height: 15em;
+  }
+}
+
+@media (max-height: 580px) {
+  .terminalStyle {
+    height: 12em;
+  }
+}
+
+@media (max-height: 550px) {
+  .terminalStyle {
+    height: 10em;
+  }
 }
