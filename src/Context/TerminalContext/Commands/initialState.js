@@ -108,6 +108,9 @@ export const initialState = {
       Bazinga!!!
     </span>
   ),
+  hello: (
+    <span>Hi</span>
+  ),
   experience: (
     <span>
       Hire me to unlock experience...

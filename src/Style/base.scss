@@ -1,15 +1,13 @@
-$lightColor: #d1dae3;
+$lightColor: #fff;
 $darkColor: #091921;
-$terminalColor: #083952;
 $primary: #52a563;
-
 $backgroundColor: $lightColor;
 $foregroundColor: $darkColor;
 
-@media (prefers-color-scheme: dark) {
-  $backgroundColor: $darkColor;
-  $foregroundColor: $lightColor;
-}
+// Showcase Color Section
+$accentColor: #1D1F2F;
+$baseDuration: 600ms;
+$baseEase: cubic-bezier(0.25, 0.46, 0.45, 0.84);
 
 %boxshadowdark {
   box-shadow: -5px -5px 10px #061116,
@@ -35,53 +33,55 @@ $foregroundColor: $darkColor;
     inset -9px -9px 18px #ffffff;
 }
 
+// n of Stars required
+@function multiple-box-shadow ($n) {
+  $value: '#{random(2000)}px #{random(2000)}px #FFF';
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+  }
+  @return unquote($value);
+}
+
+$shadows-small:  multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big:    multiple-box-shadow(100);
+
 html,
 body {
   background-color: $backgroundColor;
   color: $foregroundColor;
   font-family: 'Lato', sans-serif;
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 main {
-  min-height: 100vh;
-  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 }
 
-nav.nav-bar {
+// Banner Page
+div.banner {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @extend %boxshadowdark;
-  z-index: 1;
-}
-
-nav.nav-bar h3.title {
-  font-weight: 300;
-  letter-spacing: 2px;
-  font-size: 1.3rem;
+  height: 100vh;
+  background: radial-gradient(ellipse at bottom, $darkColor 0%, #090a0f 100%);
+  color: $lightColor;
+  overflow: hidden;
 }
 
 div.banner-terminal {
-  background-color: $terminalColor;
   width: 100%;
-  height: 5em;
+  height: 100%;
+  background: transparent;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 60px 20px;
-  color: $lightColor;
-  font-family: consolas, sans-serif;
+  align-items: center;
 }
 
 div.Typewriter {
   padding: 0 100px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 2rem;
 }
 
 span.dollar::before {
@@ -89,10 +89,76 @@ span.dollar::before {
   color: $primary;
 }
 
+// Stars
+.stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $shadows-small;
+  animation: animStar 50s linear infinite;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $shadows-small;
+  }
+}
+
+.stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $shadows-medium;
+  animation: animStar 100s linear infinite;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+  }
+}
+
+.stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $shadows-big;
+  animation: animStar 150s linear infinite;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $shadows-big;
+  }
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+// 2nd Page or Terminal Page
 div.content {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 2;
   display: flex;
   justify-content: center;
@@ -102,15 +168,19 @@ div.content {
 }
 
 div.show-case {
-  margin-top: 9em;
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  overflow: hidden;
 }
 
 .terminal-icon {
-  position: relative;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
   background: $darkColor;
   width: 4rem;
   height: 3.5rem;
@@ -118,6 +188,7 @@ div.show-case {
   border-radius: .5rem;
   overflow: hidden;
   transition: 300ms;
+  transition-property: box-shadow;
   animation-name: blowUp;
   animation-duration: 300ms;
 }
@@ -151,116 +222,62 @@ div.show-case {
               inset -21px -21px 32px #454545
 }
 
-div.profile-info {
-  position: absolute;
-  top: -55px;
-  height: 11em;
-  width: 11em;
-  z-index: 10;
-  text-align: center;
+// Slide Section
+$slideSize: 70vmin;
+$slideMargin: 4vmin;
+
+.slider {
+  margin: 0;
+  box-sizing: border-box;
+  height: $slideSize;
+  width: $slideSize;
+}
+
+.slider-wrapper {
+  display: flex;
+  list-style: none;
+  transition: transform $baseDuration cubic-bezier(0.25, 1, 0.35, 1);
+}
+
+.slide {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  color: $lightColor;
+  height: $slideSize;
+  width: $slideSize;
+  text-align: center;
+  opacity: 0.25;
+  transition: opacity calc($baseDuration / 2) $baseEase,
+              transform calc($baseDuration / 2) $baseEase;
 }
 
-div.profile-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.slide-image-wrapper {
+  background: $accentColor;
+  border-radius: 1%;
   height: 100%;
   width: 100%;
-  border-radius: 50%;
-  background: $lightColor;
-  z-index: 11;
-  @extend %boxshadowUpandDown;
-  animation-name: bondJamesBond;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  transition: 500ms;
+  overflow: hidden;
+  transition: transform calc($baseDuration / 4) $baseEase;
 }
 
-div.profile-image::after {
-  content: '';
-  height: 95%;
-  width: 95%;
-  background: url('https://avatars2.githubusercontent.com/u/32976964?s=460&v=4');
-  background-repeat: no-repeat;
-  background-size: cover;
-  object-fit: cover;
-  border-radius: 50%;
-  outline-style: none;
-  transition: 300ms ease-in;
-  animation-name: rotate;
-  animation-delay: 0.5s;
-  animation-duration: 1.5s;
-  animation-iteration-count: 1;
-}
-
-@keyframes rotate {
-  100% {
-    transform: rotate(-360deg);
-  }
-}
-
-@keyframes bondJamesBond {
-  0% {
-    transform: translateX(1000px);
-  }
-  80% {
-    transform: translateX(0px);
-    border-radius: 50%;
-    height: 7em;
-    width: 7em;
-  }
-  90% {
-    border-radius: 50%;
-    height: 12.5em;
-    width: 12.5em;
-  }
-  100% {
-    border-radius: 50%;
-    height: 11em;
-    width: 11em;
-  }
-}
-
-div.hover-info {
-  top: 0;
-  z-index: 11;
-  opacity: 0;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 1rem;
-  transition: 300ms ease-in;
-}
-
-.profile-info:hover .profile-image::after {
-  transform: rotateX(90deg);
-}
-
-.profile-info:hover .hover-info {
-  margin-top: 4em;
+.slide-image {
+  height: 110%;
+  width: 110%;
+  top: -5%;
+  left: -5%;
   opacity: 1;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity $baseDuration $baseEase,
+              transform $baseDuration, $baseEase;
 }
 
-span.profile-name {
-  margin-bottom: .5rem;
-  letter-spacing: 2px;
-  font-weight: 700;
-}
-
-span.profile-job {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 550;
-}
-
+// Terminal Section
 .terminalStyle {
-  margin-top: 9em;
   width: 55vw;
   height: 25em;
   animation-name: blowUp;
@@ -377,6 +394,7 @@ span.profile-job {
 @media (max-width: 1000px) {
   div.Typewriter {
     padding: 0 70px;
+    font-size: 1.5rem;
   }
 
   .terminalStyle {
@@ -387,6 +405,7 @@ span.profile-job {
 @media (max-width: 900px) {
   div.Typewriter {
     padding: 0 60px;
+    font-size: 1.4rem;
   }
 
   .terminalStyle {
@@ -397,10 +416,7 @@ span.profile-job {
 @media (max-width: 800px) {
   div.Typewriter {
     padding: 0 50px;
-  }
-
-  nav.nav-bar h3.title {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   .terminalStyle {
@@ -409,50 +425,10 @@ span.profile-job {
 }
 
 
-@media (max-width: 500px) {
-  nav.nav-bar h3.title {
-    font-size: 1rem;
-  }
-
-  div.banner-terminal {
-    padding: 30px 10px;
-    font-size: .8rem;
-  }
-
+@media (max-width: 600px) {
   div.Typewriter {
-    padding: 0 20px;
-  }
-
-  div.profile-info {
-    top: -20px;
-    height: 8em;
-    width: 8em;
-  }
-
-  @keyframes bondJamesBond {
-    0% {
-      transform: translateX(1000px);
-    }
-    80% {
-      transform: translateX(0px);
-      border-radius: 50%;
-      height: 6em;
-      width: 6em;
-    }
-    90% {
-      border-radius: 50%;
-      height: 10em;
-      width: 10em;
-    }
-    100% {
-      border-radius: 50%;
-      height: 8em;
-      width: 8em;
-    }
-  }
-
-  .profile-info:hover .hover-info {
-    margin-top: 1.7em;
+    padding: 0 30px;
+    font-size: 1.1rem;
   }
 
   .terminalWindow {
@@ -460,10 +436,36 @@ span.profile-job {
   }
 }
 
+@media (max-width: 500px) {
+  div.Typewriter {
+    padding: 0 20px;
+    font-size: 1rem;
+  }
+
+  .terminalWindow {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 450px) {
+  div.Typewriter {
+    padding: 0 20px;
+    font-size: .9rem;
+  }
+
+  .titleTitle {
+    font-size: 10px;
+  }
+
+  .terminalWindow {
+    font-size: 10px;
+  }
+}
+
 @media (max-width: 350px) {
-  div.banner-terminal {
-    padding: 30px 10px;
-    font-size: .6rem;
+  div.Typewriter {
+    padding: 0 20px;
+    font-size: .8rem;
   }
 
   .titleTitle {
