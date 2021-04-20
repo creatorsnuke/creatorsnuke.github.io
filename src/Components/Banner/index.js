@@ -14,7 +14,7 @@ export function Banner () {
             typewriter.typeString('<span class="line"><span class="dollar"></span> hi there, i&apos;m jessie</span><br />')
             typewriter.typeString('<span class="line"><span class="dollar"></span> a web developer</span><br />')
             typewriter.typeString('<span class="line"><span class="dollar"></span> based in cebu</span><br />')
-            typewriter.typeString('<span class="line"><span class="dollar"></span> i pursue aesthetics</span><br />')
+            typewriter.typeString('<span class="line"><span class="dollar"></span> pursuing aesthetics in designing and</span><br />')
             typewriter.typeString('<span class="line"><span class="dollar"></span> also love lifting heavy stuff and coding</span>')
               .start()
           }}
