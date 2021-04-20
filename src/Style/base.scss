@@ -267,22 +267,24 @@ h1, h2, h3 {
   cursor: pointer;
   font-family: inherit;
   font-size: inherit;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   padding: 1rem 2.5rem 1.125rem;
   text-decoration: none;
-  transition-duration: 250ms;
-  transition-property: outline, background;
+  transition-duration: 300ms;
+  transition-property: outline, background, letter-spacing;
   transition-timing-function: ease-in;
   
   &:hover {
-    background: var(--color-focus);
     outline-color: $darkColor;
+    letter-spacing: 3px;
     outline-offset: -6px;
   }
 
   &:focus {
     box-shadow: 
       inset 0 0 0 2px $lightColor,
-      inset 0 0 0 10px $darkColor;
+      inset 0 0 0 4px $darkColor;
   }
 }
 
