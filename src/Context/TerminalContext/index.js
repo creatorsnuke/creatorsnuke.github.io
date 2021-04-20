@@ -1,7 +1,6 @@
 import React, {useState, createContext} from 'react'
 import { state } from '@Context/TerminalContext/state'
 import { initialState } from '@Context/TerminalContext/Commands/initialState'
-import { data } from '@Context/TerminalContext/data'
 
 const status = {
   success: '#8dd39e',
@@ -17,9 +16,7 @@ export const TerminalContext = createContext({
 export function TerminalContextProvider (props) {
   const [terminalCommands, setTerminalCommands] = useState(state)
   const [commands, setCommands] = useState(initialState)
-  const [terminal, setTerminal] = useState('TerminalModal')
-  const [minimized, setMinimized] = useState(false)
-  const [slideData, setSlideData] = useState(data)
+  const [terminal, setTerminal] = useState(null)
 
   const executeCommand = (input) => {
     input = input.toLowerCase()
@@ -63,11 +60,7 @@ export function TerminalContextProvider (props) {
         executeCommand, 
         terminal, 
         setTerminal,
-        setCommands,
-        slideData,
-        setSlideData,
-        minimized,
-        setMinimized
+        setCommands
       }}>
       {props.children}
     </TerminalContext.Provider>

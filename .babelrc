@@ -17,9 +17,10 @@
         "root": ["./src"],
         "alias": {
           "@Components": "./src/Components",
-          "@Ui": "./src/Ui",
           "@Context": "./src/Context",
-          "@Style": "./src/Style"
+          "@Reducer": "./src/Reducer",
+          "@Style": "./src/Style",
+          "@Ui": "./src/Ui"
         }
       }
     ]
