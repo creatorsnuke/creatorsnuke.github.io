@@ -3,6 +3,7 @@ $darkColor: #091921;
 $primary: #52a563;
 $backgroundColor: $lightColor;
 $foregroundColor: $darkColor;
+$radialBGColor: radial-gradient(ellipse at bottom, $darkColor 0%, #090a0f 100%);
 
 // Showcase Color Section
 $accentColor: #1D1F2F;
@@ -81,7 +82,7 @@ div.banner-terminal {
 div.Typewriter {
   padding: 0 100px;
   font-family: 'Inconsolata', monospace;
-  font-size: 2rem;
+  font-size: 3.5vw;
 }
 
 span.dollar::before {
@@ -165,6 +166,7 @@ div.content {
   align-items: center;
   padding-left: 1rem;
   padding-right: 1rem;
+  background: $radialBGColor;
 }
 
 div.show-case {
@@ -394,7 +396,6 @@ $slideMargin: 4vmin;
 @media (max-width: 1000px) {
   div.Typewriter {
     padding: 0 70px;
-    font-size: 1.5rem;
   }
 
   .terminalStyle {
@@ -405,7 +406,6 @@ $slideMargin: 4vmin;
 @media (max-width: 900px) {
   div.Typewriter {
     padding: 0 60px;
-    font-size: 1.4rem;
   }
 
   .terminalStyle {
@@ -416,7 +416,6 @@ $slideMargin: 4vmin;
 @media (max-width: 800px) {
   div.Typewriter {
     padding: 0 50px;
-    font-size: 1.3rem;
   }
 
   .terminalStyle {
@@ -428,7 +427,6 @@ $slideMargin: 4vmin;
 @media (max-width: 600px) {
   div.Typewriter {
     padding: 0 30px;
-    font-size: 1.1rem;
   }
 
   .terminalWindow {
@@ -439,7 +437,6 @@ $slideMargin: 4vmin;
 @media (max-width: 500px) {
   div.Typewriter {
     padding: 0 20px;
-    font-size: 1rem;
   }
 
   .terminalWindow {
@@ -450,7 +447,6 @@ $slideMargin: 4vmin;
 @media (max-width: 450px) {
   div.Typewriter {
     padding: 0 20px;
-    font-size: .9rem;
   }
 
   .titleTitle {
@@ -465,7 +461,6 @@ $slideMargin: 4vmin;
 @media (max-width: 350px) {
   div.Typewriter {
     padding: 0 20px;
-    font-size: .8rem;
   }
 
   .titleTitle {
