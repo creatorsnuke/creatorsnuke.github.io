@@ -76,8 +76,8 @@ export const initialState = {
   skills: (
     <span>Tools and Technologies:
       <br/>
-      <br/>Express, React, Vue, Laravel, Bootstrap, Bulma, Materialize, MongoDB, MySQL, 
-        JavaScript, JSON, PHP, HTML, CSS, SASS, Objective-C, Nodejs
+      <br/>Express, React, Laravel, Bootstrap, Bulma, Materialize, MongoDB, MySQL, 
+        JavaScript, JSON, PHP, HTML, CSS (sass), Nodejs
       <br/>Postman, Git, Vscode and Adobe (Ai, Ps & Id)
     </span>
   ),
@@ -87,11 +87,11 @@ export const initialState = {
       <br/>
       <br/>
       <a href='https://www.facebook.com/tarrosa.jessie' style={linkStyle} >
-        <span style={textStyle}><FaFacebookSquare /></span> - majessietic
+        <span style={textStyle}><FaFacebookSquare /></span> - Jessie Tarrosa
       </a>
       <br/>
       <a href='https://www.instagram.com/oreoseenoevil' style={linkStyle}>
-        <span style={textStyle}><FaInstagram /></span> - majessietic
+        <span style={textStyle}><FaInstagram /></span> - oreoseenoevil
       </a>
       <br/>
       <a href='https://www.twitter.com/majessietic' style={linkStyle}>
