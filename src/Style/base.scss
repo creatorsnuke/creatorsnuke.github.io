@@ -509,6 +509,20 @@ h1, h2, h3 {
   animation-duration: 1000ms;
 }
 
+.bazinga {
+  position: absolute;
+  z-index: 99;
+  height: 680px;
+  width: 485px;
+  animation-name: blowUp;
+  animation-duration: 500ms;
+}
+
+.bazinga img {
+  height: 100%;
+  width: 100%;
+}
+
 @keyframes blowUp {
   0% {
     transform: scale(0);

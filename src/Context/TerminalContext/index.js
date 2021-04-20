@@ -17,6 +17,7 @@ export function TerminalContextProvider (props) {
   const [terminalCommands, setTerminalCommands] = useState(state)
   const [commands, setCommands] = useState(initialState)
   const [terminal, setTerminal] = useState(null)
+  const [magic, setMagic] = useState(null)
 
   const executeCommand = (input) => {
     input = input.toLowerCase()
@@ -39,6 +40,8 @@ export function TerminalContextProvider (props) {
       return setTerminalCommands([])
     } else if (['exit', 'closed'].includes(input)) {
       return setTerminalCommands([]), setTerminal(null)
+    } else if (['something', 'magic'].includes(input)) {
+      return setMagic('bazinga')
     }
     
     if (!Object.prototype.hasOwnProperty.call(commands, input)) {
@@ -60,7 +63,9 @@ export function TerminalContextProvider (props) {
         executeCommand, 
         terminal, 
         setTerminal,
-        setCommands
+        setCommands,
+        magic,
+        setMagic
       }}>
       {props.children}
     </TerminalContext.Provider>
