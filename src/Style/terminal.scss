@@ -1,0 +1,263 @@
+$lightColor: #fff;
+$darkColor: #091921;
+$primary: #52a563;
+$backgroundColor: $lightColor;
+$foregroundColor: $darkColor;
+
+.terminal-icon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: $darkColor;
+  width: 4rem;
+  height: 3.5rem;
+  z-index: 1;
+  border-radius: .5rem;
+  overflow: hidden;
+  transition: 300ms;
+  transition-property: box-shadow;
+  animation-name: blowUp;
+  animation-duration: 300ms;
+}
+
+.terminal-icon::before {
+  content: '';
+  height: 1rem;
+  top: 1rem; 
+  position: absolute;
+  border-right: .4rem solid $lightColor;
+  border-bottom: .4rem solid $lightColor;
+  width: 1rem;
+  transform: rotate(-45deg);
+  z-index: 2;
+  left: .2rem;
+}
+
+.terminal-icon::after {
+  content: '';
+  background: $lightColor;
+  height: .4rem;
+  width: 1.5rem;
+  z-index: 3;
+  position: absolute;
+  top: 2.5rem;
+  left: 1.8rem;
+}
+
+.terminal-icon:hover {
+  box-shadow: inset 21px 21px 32px #111111,
+              inset -21px -21px 32px #454545
+}
+
+// Terminal Section
+.terminalStyle {
+  width: 55vw;
+  height: 25em;
+  animation-name: blowUp;
+  animation-duration: 1000ms;
+}
+
+.bazinga {
+  position: absolute;
+  z-index: 99;
+  height: 80vmin;
+  width: 50vmin;
+  animation-name: blowUp;
+  animation-duration: 1000ms;
+}
+
+.bazinga img {
+  height: 100%;
+  width: 100%;
+  animation-name: rotatePhoto;
+  animation-duration: 500ms;
+}
+
+@keyframes rotatePhoto {
+  100% {
+    transform: rotate(-720deg);
+  }
+}
+
+@keyframes blowUp {
+  0% {
+    transform: scale(0);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.titleBar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eae8e9;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid rgba(66, 66, 66, 0.5);
+}
+
+.titleBtn {
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  margin: 0.2em;
+
+  &.red {
+    background: #fa615c;
+    cursor: pointer;
+  }
+
+  &.yellow {
+    background: #ffbd48;
+  }
+
+  &.green {
+    background: #3fc950;
+  }
+}
+
+.titleButton {
+  display: flex;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  padding-left: 0.6em;
+}
+
+.titleTitle {
+  align-self: center;
+  font-family: monospace;
+  height: 100%;
+  font-size: 2vmin;
+}
+
+.titleRemark {
+  display: flex;
+  padding-right: 0.6em;
+  height: 100%;
+}
+
+.terminalWindow {
+  background-color: rgb(23, 42, 69);
+  border-radius: 0 0 5px 5px;
+  height: 100%;
+  padding: 1.2em 1.5em 1.2em 1.5em;
+  line-height: 1.2em;
+  flex-direction: column;
+  overflow-y: hidden;
+  overflow: auto;
+}
+
+.terminalWindow::-webkit-scrollbar {
+  width: 2px;
+}
+.terminalWindow::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+.terminalWindow::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 1);; 
+}
+
+@media (max-width: 1500px) {
+  .terminalStyle {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 1350px) {
+  .terminalStyle {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  .terminalStyle {
+    width: 75vw;
+  }
+}
+
+@media (max-width: 1000px) {
+  .terminalStyle {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .terminalStyle {
+    width: 85vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .terminalStyle {
+    width: 90vw;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .terminalWindow {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  .titleTitle {
+    font-size: 2.8vmin;
+  }
+
+  .terminalWindow {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 450px) {
+  .terminalWindow {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 350px) {
+  .terminalWindow {
+    font-size: 10px;
+  }
+}
+
+@media (max-height: 850px) {
+  .terminalStyle {
+    height: 20em;
+  }
+}
+
+@media (max-height: 750px) {
+  .terminalStyle {
+    height: 18em;
+  }
+}
+
+@media (max-height: 720px) {
+  .terminalStyle {
+    height: 16em;
+  }
+}
+
+@media (max-height: 650px) {
+  .terminalStyle {
+    height: 15em;
+  }
+}
+
+@media (max-height: 580px) {
+  .terminalStyle {
+    height: 12em;
+  }
+}
+
+@media (max-height: 550px) {
+  .terminalStyle {
+    height: 10em;
+  }
+}
