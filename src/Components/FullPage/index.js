@@ -11,8 +11,9 @@ export const FullPage = () => {
       direction={'vertical'}
       slidesPerView={1}
       speed={700}
-      mousewheel={true}
       grabCursor={true}
+      parallax={true}
+      mousewheel={true}
     >
       <SwiperSlide>
         <Banner />
