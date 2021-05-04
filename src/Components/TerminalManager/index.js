@@ -4,7 +4,7 @@ import { Terminal } from '@Components/Terminal'
 import { TerminalIcon } from '@Components/TerminalIcon'
 
 import { SlideContextProvider } from '@Context/SlideContext'
-import { Slider } from '@Components/Slider'
+// import { Slider } from '@Components/Slider'
 import { Bazinga } from '@Components/Bazinga'
 
 export const TerminalManager = () => {
@@ -32,7 +32,8 @@ export const TerminalManager = () => {
     <SlideContextProvider>
       <div className="show-case">
         <TerminalIcon />
-        <Slider heading='Example Slider' />
+        {/* <Slider heading='Example Slider' /> */}
+        <h1>Hello There</h1>
       </div>
     </SlideContextProvider>
   )

@@ -5,9 +5,6 @@ export function Banner () {
 
   return (
     <div className="banner">
-      <div className="stars"></div>
-      <div className="stars2"></div>
-      <div className="stars3"></div>
       <div className="banner-terminal">
         <Typewriter
           options={{

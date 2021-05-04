@@ -1,28 +1,26 @@
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/swiper.scss'
-
 import { Banner } from '@Components/Banner'
+// import { SlideContextProvider } from '@Context/SlideContext'
+// import { Slider } from '@Components/Slider'
 import { TerminalManager } from '@Components/TerminalManager'
+import { Stars } from '@Components/Stars'
+import '@Components/FullPage/index.scss'
 
 export const FullPage = () => {
   return (
-    <Swiper
-      direction={'vertical'}
-      slidesPerView={1}
-      speed={700}
-      grabCursor={true}
-      parallax={true}
-      mousewheel={true}
-    >
-      <SwiperSlide>
-        <Banner />
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="content">
+    <div className="main-container">
+      <Stars />
+      <Banner />
+      <div className="content" id="content-one">
+        <div className="mini-project">
+          <header><h1>Mini Project</h1></header>
+        </div>
+      </div>
+      <div className="content" id="content-two">
+        <div className="show-case">
           <TerminalManager />
         </div>
-      </SwiperSlide>
-    </Swiper>
+      </div>
+    </div>
   )
 }
