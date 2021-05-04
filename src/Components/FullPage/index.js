@@ -1,7 +1,6 @@
 import React from 'react'
 import { Banner } from '@Components/Banner'
 import { SlideContextProvider } from '@Context/SlideContext'
-// import { Slider } from '@Components/Slider'
 import { TerminalManager } from '@Components/TerminalManager'
 import { Stars } from '@Components/Stars'
 import { Slider } from '@Components/Slider'

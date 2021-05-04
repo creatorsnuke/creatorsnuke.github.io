@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { SlideContext } from '@Context/SlideContext'
 
-export const SliderControl = ({ type, title, handleClick }) => {
+export const SliderControl = ({ current, prevSlide, nextSlide }) => {
+  const { slides } = useContext(SlideContext)
+
   return (
-    <button className={`btn btn--${type}`} title={title} onClick={handleClick}>
-      <svg className="icon" viewBox="0 0 24 24">
-        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-      </svg>
-    </button>
+    <nav className="nav_arrows">
+      <button className="prev" aria-label="Prev" onClick={prevSlide}></button>
+      <div className="counter">
+        <span>{current}</span>
+        <span>{slides.length}</span>
+      </div>
+      <button className="next" aria-label="Next" onClick={nextSlide}></button>
+    </nav>
   )
 }

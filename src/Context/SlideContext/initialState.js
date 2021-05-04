@@ -1,5 +1,7 @@
 export const initialState = {
   current: 0,
+  autoUpdate: true,
+  timeTrans: 4000,
   slides: [
     {
       id: 0,
