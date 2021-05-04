@@ -2,10 +2,8 @@ import React, { Fragment, useContext, useEffect } from 'react'
 import { TerminalContext } from '@Context/TerminalContext'
 import { Terminal } from '@Components/Terminal'
 import { TerminalIcon } from '@Components/TerminalIcon'
-
-import { SlideContextProvider } from '@Context/SlideContext'
-// import { Slider } from '@Components/Slider'
 import { Bazinga } from '@Components/Bazinga'
+import '@Components/TerminalManager/index.scss'
 
 export const TerminalManager = () => {
   const { terminal, setTerminal, magic, setMagic } = useContext(TerminalContext)
@@ -29,12 +27,9 @@ export const TerminalManager = () => {
   }
 
   return (
-    <SlideContextProvider>
-      <div className="show-case">
-        <TerminalIcon />
-        {/* <Slider heading='Example Slider' /> */}
-        <h1>Hello There</h1>
-      </div>
-    </SlideContextProvider>
+    <div className="show-case">
+      <TerminalIcon />
+      <h1 className="text">Hello There</h1>
+    </div>
   )
 }

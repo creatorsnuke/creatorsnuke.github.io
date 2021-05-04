@@ -57,8 +57,9 @@ body {
 }
 
 .main-container {
-  display: flex;
   position: relative;
+  width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -160,7 +161,7 @@ span.dollar::before {
 }
 
 // 2nd Page or Terminal Page
-div.content {
+div.section {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -186,10 +187,6 @@ div.show-case {
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
-}
-
-div.show-case h1 {
-  color: #000;
 }
 
 @media (max-width: 1350px) {
