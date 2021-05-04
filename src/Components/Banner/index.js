@@ -1,10 +1,12 @@
 import React from 'react'
 import Typewriter from 'typewriter-effect'
+import { Stars } from '@Components/Stars'
 
 export function Banner () {
 
   return (
     <div className="banner">
+      <Stars />
       <div className="banner-terminal">
         <Typewriter
           options={{

@@ -8,7 +8,7 @@ export const SliderControl = ({ current, prevSlide, nextSlide }) => {
     <nav className="nav_arrows">
       <button className="prev" aria-label="Prev" onClick={prevSlide}></button>
       <div className="counter">
-        <span>{current}</span>
+        <span>{current + 1}</span>
         <span>{slides.length}</span>
       </div>
       <button className="next" aria-label="Next" onClick={nextSlide}></button>
