@@ -90,7 +90,7 @@ div.banner-terminal {
 div.Typewriter {
   padding: 0 100px;
   font-family: 'Inconsolata', monospace;
-  font-size: 1.650em;
+  font-size: 5vmin;
 }
 
 span.dollar::before {
@@ -213,7 +213,7 @@ div.show-case {
 
 @media (max-width: 800px) {
   div.Typewriter {
-    font-size: 3.3vw;
+    // font-size: 3.3vw;
     padding: 0 50px;
   }
 }
